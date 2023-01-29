@@ -9,7 +9,7 @@ public class WithArray {
         arrayInt = new int[5];
 
         List<Integer> list= new ArrayList<>();
-        list.
+
         int[] arrayInt1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int[] arrayInt2 = new int[5];
 
