@@ -1,6 +1,6 @@
 package com.practice.abstraction;
 
-public abstract class Aminal {
+public abstract class Animal {
     public int age;
     public String name;
 
