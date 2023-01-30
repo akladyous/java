@@ -12,7 +12,6 @@ public class Main {
         Cat cat = new Cat();
         cat.name = "miccio";
         cat.age = 5;
-
         System.out.println();
     }
 
