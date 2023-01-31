@@ -11,6 +11,6 @@ class TempConverterTest {
     @Test
     void celciusToFahrenheit(){
         double result = this.converter.celciusToFahrenheit(100);
-        Assertions.assertEquals(212, result, 0.1);
+        assertEquals(212, result, 0.1);
     }
 }
