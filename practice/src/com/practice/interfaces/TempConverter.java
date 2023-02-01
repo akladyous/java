@@ -10,9 +10,9 @@ public class TempConverter implements TemperatureConverter {
 
     @Override
     public double celciusToFahrenheit(double temp) {
-        if (temp <= 273.15) {
-            throw new RuntimeException("Input was below absolute zero");
-        }
+//        if (temp <= 273.15) {
+//            throw new RuntimeException("Input was below absolute zero");
+//        }
         double fahrenheit = (9d / 5d * temp) + 32;
         return fahrenheit;
     }

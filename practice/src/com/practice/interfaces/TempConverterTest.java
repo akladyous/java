@@ -7,6 +7,8 @@ class TempConverterTest {
     TemperatureConverter converter = new TempConverter();
     @Test
     void fahrenheitToCelcius() {
+        double resut = this.converter.fahrenheitToCelcius(90);
+        assertEquals(32, resut, 0.25);
     }
 
     @Test
