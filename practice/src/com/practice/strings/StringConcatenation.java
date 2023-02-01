@@ -28,5 +28,15 @@ public class StringConcatenation {
                 "get busy dying.",
                 "--Stephen King");
     }
-
+    public String stringBuilder() {
+        return new StringBuilder()
+                .append("Get busy living")
+                .append(newLine)
+                .append("or")
+                .append(newLine)
+                .append("get busy dying.")
+                .append(newLine)
+                .append("--Stephen King")
+                .toString();
+    }
 }
