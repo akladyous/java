@@ -21,6 +21,12 @@ public class StringConcatenation {
                 + newLine
                 + "--Stephen King";
     }
-
+    public String stringJoin() {
+        return String.join(newLine,
+                "Get busy living",
+                "or",
+                "get busy dying.",
+                "--Stephen King");
+    }
 
 }
