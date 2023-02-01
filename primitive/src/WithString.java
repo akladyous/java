@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class WithString {
+    String s1 = String.join(newLine);
     static int valueX;
     {
         valueX = 10;
@@ -23,5 +24,6 @@ public class WithString {
         System.out.println("args = " + Arrays.toString(args));
 
     };
+
 }
 

@@ -9,9 +9,9 @@ public class PrimitiveBoolean {
             System.out.println("value is false");
         }
         System.out.println("Boolean.valueOf() is not null : " + Boolean.valueOf(str));
-        System.out.println("Boolean.parse(string value)   : " + Boolean.parseBoolean(str));
         System.out.println("Boolean.compare               : " + Boolean.compare(true, false));
         System.out.println("Boolean.logicalAnd            : " + Boolean.logicalAnd(true, true));
         System.out.println("Boolean.getBoolean            : " + Boolean.getBoolean(str));
+        System.out.println("Boolean.parse(string value)   : " + Boolean.parseBoolean(str));
     }
 }
