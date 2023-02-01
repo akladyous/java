@@ -1,5 +1,8 @@
 package com.practice.strings;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 public class StringConcatenation {
     String newLine = System.getProperty("line.separator");
 
@@ -39,4 +42,16 @@ public class StringConcatenation {
                 .append("--Stephen King")
                 .toString();
     }
+
+    public String stringWriter() {
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(stringWriter);
+        printWriter.println("Get busy living");
+        printWriter.println("or");
+        printWriter.println("get busy dying.");
+        printWriter.println("--Stephen King");
+        return stringWriter.toString();
+    }
+
+
 }
