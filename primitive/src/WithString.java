@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
 public class WithString {
-    String s1 = String.join(newLine);
+    String newLine = System.getProperty("line.separator");
+
     static int valueX;
     {
         valueX = 10;
