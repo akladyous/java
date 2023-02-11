@@ -1,9 +1,11 @@
-package com.practice.map;
+package com.practice.collection.map.hashmap;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class HashMapDemo {
-
     public static void main(String[] args) {
         Map<String, String> users = new HashMap<>();
         users.put("name", "paolo");
@@ -32,3 +34,5 @@ public class HashMapDemo {
     }
 
 }
+
+
