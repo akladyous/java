@@ -22,12 +22,12 @@ public class HashMapDemo {
         System.out.println(mapObj.containsValue(20));
         System.out.println(mapObj.remove("test"));
         System.out.println("mapObj.entrySet() : " + mapObjEntrySet);
-
-
-    }
-    public void prova(){};
-    public static void PrintHashMap(HashMap obj){
-
+        // iterate over hashMap
+//        System.out.println();
+        for(Map.Entry pair : mapObj.entrySet()) {
+            System.out.println(pair.getKey() + " " + pair.getValue());
+        }
+        mapObj.entrySet().stream();
     }
 
 }
