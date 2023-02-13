@@ -4,6 +4,7 @@ public class PrimitiveString {
         String s2 = "world";
         String s3;
 
+
         s3 = s1.concat(s2);
         System.out.println("String.concat s1.concat(s2): " + s3);
 
