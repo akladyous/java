@@ -28,9 +28,12 @@ public class StringDemo {
     for (int num : ch2) {
       System.out.println("char : " + num);
     }
+
+    System.out.println(String.valueOf(str3.chars().sum()));
     System.out.println("chars.toString " + ch2.toString());
     System.out.println("-".repeat(40));
 
+    //
     String name = getName("paolo");
     System.out.println(name);
     System.out.println("-".repeat(40));
