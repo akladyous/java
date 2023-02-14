@@ -1,6 +1,8 @@
 package com.practice.strings;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.platform.commons.util.StringUtils;
 
@@ -37,6 +39,25 @@ public class StringDemo {
     System.out.println(name);
     System.out.println("-".repeat(40));
 
+    //
+    String userName = charsToUpperCase("paolo");
+    System.out.println("userName : " + userName);
+
+    // String str4 = new String("hello world");
+    // List<Character> charStr = new ArrayList<>();
+    // str4.chars()
+    // .map(x -> x + 32)
+    // .forEach(y -> charStr.add(Character.valueOf((char) y)));
+    // System.out.println(charStr);
+  }
+
+  public static String charsToUpperCase(String string) {
+    List<Character> arrChars = new ArrayList<>();
+    string
+        .chars()
+        .map(num -> num - 32)
+        .forEach(num -> arrChars.add(Character.valueOf((char) num)));
+    return arrChars.toString();
   }
 
   public static String getName(String name) {
@@ -46,4 +67,5 @@ public class StringDemo {
     }
     return new String(str);
   }
+
 }
