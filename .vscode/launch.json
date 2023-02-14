@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch StringDemo",
+      "request": "launch",
+      "mainClass": "com.practice.strings.StringDemo",
+      "projectName": "com.docker.devenvironments.code_c794ccf8"
+    },
+    {
+      "type": "java",
       "name": "Launch WithArray",
       "request": "launch",
       "mainClass": "WithArray",
