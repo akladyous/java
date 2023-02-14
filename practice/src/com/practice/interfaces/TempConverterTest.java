@@ -4,20 +4,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TempConverterTest {
-    TemperatureConverter converter = new TempConverter();
-    @Test
-    void fahrenheitToCelcius() {
-        double resut = this.converter.fahrenheitToCelcius(90);
-        assertEquals(32, resut, 0.25);
-    }
+  TemperatureConverter converter = new TempConverter();
 
-    @Test
-    void celciusToFahrenheit() {
-        double result = this.converter.celciusToFahrenheit(100);
-        assertEquals(212, result, 0.1);
-    }
+  @Test
+  void fahrenheitToCelcius() {
+    double resut = this.converter.fahrenheitToCelcius(90);
+    assertEquals(32, resut, 0.25);
+  }
 
-    @Test
-    void convertTemp() {
-    }
+  @Test
+  void celciusToFahrenheit() {
+    double result = this.converter.celciusToFahrenheit(100);
+    assertEquals(212, result, 0.1);
+  }
+
+  @Test
+  void convertTemp() {
+  }
 }
