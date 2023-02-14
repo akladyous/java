@@ -30,7 +30,6 @@ public class StringDemo {
     }
 
     System.out.println(String.valueOf(str3.chars().sum()));
-    System.out.println("chars.toString " + ch2.toString());
     System.out.println("-".repeat(40));
 
     //
