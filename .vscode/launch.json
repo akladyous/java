@@ -1,0 +1,81 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch WithArray",
+      "request": "launch",
+      "mainClass": "WithArray",
+      "projectName": "com.docker.devenvironments.code_c794ccf8"
+    },
+    {
+      "type": "java",
+      "name": "Launch WithString",
+      "request": "launch",
+      "mainClass": "WithString",
+      "projectName": "com.docker.devenvironments.code_c794ccf8"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "NodeJS",
+      "smartStep": false,
+      "skipFiles": [
+        "<node_internals>/**",
+        "node_modules/**"
+      ],
+      "program": "${file}",
+      "stopOnEntry": false
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome debugger",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src"
+    },
+    {
+      "name": "Python",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": true
+    },
+    {
+      "name": "Python: Django",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "console": "internalConsole",
+      "args": [
+        "runserver"
+      ],
+      "django": true
+    },
+    {
+      "name": "Rails server",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/${file}",
+      "args": [
+        "server"
+      ]
+    },
+    {
+      "type": "rdbg",
+      "name": "Debug current file with rdbg",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "script": "${file}",
+      "args": [],
+      "askParameters": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Attach with rdbg",
+      "request": "attach"
+    }
+  ]
+}

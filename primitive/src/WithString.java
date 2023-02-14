@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class WithString {
     String newLine = System.getProperty("line.separator");
-
+    String prova = new String("ciao");
     static int valueX;
     {
         valueX = 10;
