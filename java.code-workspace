@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "java.project.outputPath": "bin",
+    "java.project.sourcePaths": ["src/**"],
+    "launch": {
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "type": "java",
+          "name": "Launch current file",
+          "request": "launch",
+          "mainClass": "${fileBansename}"
+        }
+      ],
+      "compounds": []
+    }
+  }
+}

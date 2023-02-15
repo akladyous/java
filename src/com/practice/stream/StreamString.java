@@ -1,4 +1,3 @@
-package com.practice.stream;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -12,7 +11,6 @@ public class StreamString {
   static String str5 = "string 5";
 
   public static void main(String[] args) {
-
     Stream<String> stream1 = Stream.of(str1, str2, str3);
 
     Stream<String> stream2 = Arrays.asList(str1, str2, str3, str4, str5).stream();
