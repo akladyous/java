@@ -1,3 +1,4 @@
+
 package com.practice.stream;
 
 import java.io.BufferedReader;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+// https://github.com/Vedenin/useful-java-links/blob/master/helloworlds/1.6-usefull-libraries/functional_programming/jdk_stream_api/src/main/java/streamapi/BuildTests.java#L25
 public class StreamDemo {
 
   private static void testBuildStream() throws Exception {
