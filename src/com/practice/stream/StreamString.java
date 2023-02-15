@@ -15,6 +15,8 @@ public class StreamString {
         .map(str -> new String(str).toUpperCase())
         .collect(Collectors.joining(" ,"));
     System.out.println("stream2Joined : " + stream2Joined);
+    System.out.println("-".repeat(40));
+
   }
 }
 // https://github.com/Vedenin/useful-java-links/blob/master/helloworlds/1.6-usefull-libraries/functional_programming/jdk_stream_api/src/main/java/streamapi/BuildTests.java#L25
