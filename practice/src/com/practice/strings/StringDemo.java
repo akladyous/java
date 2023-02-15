@@ -2,6 +2,7 @@ package com.practice.strings;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 import java.util.ArrayList;
 
 import org.junit.platform.commons.util.StringUtils;
@@ -43,7 +44,7 @@ public class StringDemo {
     String userName = charsToUpperCase("paolo");
     System.out.println("userName : " + userName);
 
-    Arrays.asList("Method Reference : " + str1, str2, str3).forEach(System.out::print);
+    Arrays.asList("Method Reference : " + str1, str2, str3).forEach(System.out::println);
 
   }
 
