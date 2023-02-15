@@ -35,16 +35,15 @@ public class StringDemo {
     System.out.println("-".repeat(40));
 
     //
-    String name = getName("paolo");
-    System.out.println(name);
-    System.out.println("-".repeat(40));
-
-    //
     String userName = charsToUpperCase("paolo");
     System.out.println("userName : " + userName);
 
     Arrays.asList("Method Reference : " + str1, str2, str3).forEach(System.out::println);
 
+    //
+    String name = getName("paolo");
+    System.out.println(name);
+    System.out.println("-".repeat(40));
   }
 
   public static String charsToUpperCase(String string) {
