@@ -17,7 +17,7 @@
           "type": "java",
           "name": "Launch current file",
           "request": "launch",
-          "sourcePaths": [".", "${fileDirname}"],
+          // "sourcePaths": [".", "${fileDirname}"],
           "classPaths": ["$Auto"],
           "modulePaths": ["$Auto"],
           "mainClass": "${fileBasenameNoExtension}",
