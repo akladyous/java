@@ -6,7 +6,10 @@
   ],
   "settings": {
     "java.project.outputPath": "bin",
-    "java.project.sourcePaths": ["src/**"],
+    "java.project.sourcePaths": ["src", "${fileBansename}"],
+    "[java]": {
+      "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
     "launch": {
       "version": "0.2.0",
       "configurations": [
@@ -14,7 +17,13 @@
           "type": "java",
           "name": "Launch current file",
           "request": "launch",
-          "mainClass": "${fileBansename}"
+          "sourcePaths": [".", "${fileDirname}"],
+          "classPaths": ["$Auto"],
+          "modulePaths": ["$Auto"],
+          "mainClass": "${fileBasenameNoExtension}",
+          "args": "",
+          "cwd": "${workspaceFolder}",
+          "console": "integratedTerminal"
         }
       ],
       "compounds": []

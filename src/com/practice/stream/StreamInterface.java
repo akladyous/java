@@ -1,3 +1,4 @@
+package com.practice.stream;
 
 import java.util.stream.Stream;
 

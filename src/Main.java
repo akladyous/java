@@ -1,3 +1,4 @@
+import com.practice.generics.AddTwoNums;
 
 public class Main {
   public static void main(String[] args) {
