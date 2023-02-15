@@ -43,6 +43,8 @@ public class StringDemo {
     String userName = charsToUpperCase("paolo");
     System.out.println("userName : " + userName);
 
+    Arrays.asList("Method Reference : " + str1, str2, str3).forEach(System.out::print);
+
   }
 
   public static String charsToUpperCase(String string) {
