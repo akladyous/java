@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        String query = SqlConnect.parseSqlFile("test.sql");
-        System.out.println("query \n " + query);
+        String query = FileUtil.parseSQLFile("test.sql");
+        System.out.println("query :  \n " + query);
         Connection conn = SqlConnect.dbConnect("boula", "paolo");
     }
 
