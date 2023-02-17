@@ -13,27 +13,5 @@ public class Main {
         Connection conn = SqlConnect.dbConnect("boula", "paolo");
     }
 
-    public static void prova() {
-        BufferedReader reader = null;
-        File script;
-        StringBuilder query = new StringBuilder();
-        String line;
-        try {
-            reader = new BufferedReader( new FileReader("./data/test.sql"));
-            while ( (line = reader.readLine() )!= null ) {
-                System.out.println("line : " + line);
-                query.append(line);
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (reader != null) reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("-".repeat(40));
-        System.out.println("scripts : " + query);
-    }
+
 }
