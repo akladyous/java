@@ -28,4 +28,15 @@ public class User {
         this.verified = verified;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", active=" + active +
+                ", verified=" + verified +
+                '}';
+    }
 }
