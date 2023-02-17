@@ -1,6 +1,8 @@
 import models.Employee;
 import repos.EmployeeDAO;
 
+import java.util.Collections;
+
 public class Main {
     public static void main(String[] args) {
         Boolean result = EmployeeDAO.createUserTable();
