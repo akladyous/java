@@ -1,6 +1,4 @@
 package utils;
-
-import javax.annotation.processing.FilerException;
 import java.sql.*;
 import java.util.Properties;
 public class SqlConnect {

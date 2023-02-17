@@ -11,7 +11,7 @@ public class Main {
         String query = FileUtil.parseSQLFile("test.sql");
         System.out.println("query :  \n " + query);
 
-            Connection conn = SqlConnect.dbConnect("boula", "paolo");
+        Connection conn = SqlConnect.dbConnect("boula", "paolo");
         try {
             Statement statement = conn.createStatement();
             ResultSet rs =  statement.executeQuery(query);
