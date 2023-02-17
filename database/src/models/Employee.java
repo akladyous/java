@@ -1,27 +1,30 @@
 package models;
 
-public class User {
+public class Employee {
     int id;
-    String userName;
+    String firstName;
+    String lastName;
     String email;
     String password;
     Boolean active;
     Boolean verified;
 
-    public User() {
+    public Employee() {
     }
 
-    public User(String userName, String email, String password, Boolean active, Boolean verified) {
-        this.userName = userName;
+    public Employee(String userName, String email, String password, Boolean active, Boolean verified) {
+        this.firstName = userName;
+        this.lastName = userName;
         this.email = email;
         this.password = password;
         this.active = active;
         this.verified = verified;
     }
 
-    public User(int id, String userName, String email, String password, Boolean active, Boolean verified) {
+    public Employee(int id, String userName, String email, String password, Boolean active, Boolean verified) {
         this.id = id;
-        this.userName = userName;
+        this.firstName = userName;
+        this.lastName = userName;
         this.email = email;
         this.password = password;
         this.active = active;
@@ -30,9 +33,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Employee{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", active=" + active +
