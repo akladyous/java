@@ -15,11 +15,6 @@ public class UsersDAO {
         try {
             String sql = FileUtil.parseSQLFile("create_users.sql");
             Connection conn = SqlConnect.dbConnect("boula", "paolo");
-
-            /*
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ps.executeQuery();
-            */
             Statement statement = conn.createStatement();
 //            ResultSet rs = statement.executeQuery(sql);
 //            statement.executeQuery(sql);
@@ -31,7 +26,18 @@ public class UsersDAO {
         }
     }
 
-    public static void createUsers() {
+    public static void createUsers(String userName, String email,String password,Boolean verified) {
+        String sql = "INSERT INTO users (username, email, password, verified) VALUES (?, ?, ?, ?)";
+        try {
+            Connection conn = SqlConnect.dbConnect("boula", "paolo");
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, userName);
+            ps.setString(2, email);
+            ps.setString(3, password);
+            ps.setBoolean(4, verified);
 
+        } catch (SQLException e) {
+            System.out.println("SQL Error : "  + e.getMessage());
+        }
     }
 }
