@@ -1,4 +1,4 @@
-package models;
+package repos;
 
 import utils.FileUtil;
 import utils.SqlConnect;
@@ -26,7 +26,7 @@ public class UsersDAO {
         }
     }
 
-    public static void createUsers(String userName, String email,String password,Boolean verified) {
+    public static Boolean createUsers(String userName, String email,String password,Boolean verified) {
         String sql = "INSERT INTO users (username, email, password, verified) VALUES (?, ?, ?, ?)";
         try {
             Connection conn = SqlConnect.dbConnect("boula", "paolo");
@@ -35,9 +35,11 @@ public class UsersDAO {
             ps.setString(2, email);
             ps.setString(3, password);
             ps.setBoolean(4, verified);
-
+            ps.execute();
+            return true;
         } catch (SQLException e) {
             System.out.println("SQL Error : "  + e.getMessage());
+            return false;
         }
     }
 }
