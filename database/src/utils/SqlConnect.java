@@ -2,7 +2,7 @@ package utils;
 import java.sql.*;
 import java.util.Properties;
 public class SqlConnect {
-    private static String url = "jdbc:postgresql://localhost/postgres";
+    private static String url = "jdbc:postgresql://localhost/practice";
     private static String userName;
     private static String userPassword;
     private static Connection connection = null;
@@ -16,6 +16,7 @@ public class SqlConnect {
                 connection = DriverManager.getConnection(url, props);
     //            Statement s = connection.createStatement();
     //            s.execute(queryScript);
+
             } catch (SQLException e) {
                 System.out.println("Database Connect Error : " +  e.getMessage() + '\n');
             }
