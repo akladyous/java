@@ -24,7 +24,7 @@ public class EmployeeDAO {
         return true;
     }
 
-    public static Boolean createUser(
+    public static Employee createEmployee(
             String firstName,
             String lastName,
             String email,
@@ -32,6 +32,7 @@ public class EmployeeDAO {
             Boolean active,
             Boolean verified
     ) {
+
         String sql = "INSERT INTO employee\n" +
                 "(first_name, last_name, email, password, active, verified)\n" +
                 "VALUES (?, ?, ?, ?, ?, ?)";
@@ -39,21 +40,22 @@ public class EmployeeDAO {
             Connection conn = SqlConnect.dbConnect("boula", "paolo");
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, firstName);
-            ps.setString(1, lastName);
-            ps.setString(2, email);
-            ps.setString(3, password);
-            ps.setBoolean(3, active);
-            ps.setBoolean(4, verified);
+            ps.setString(2, lastName);
+            ps.setString(3, email);
+            ps.setString(4, password);
+            ps.setBoolean(5, active);
+            ps.setBoolean(6, verified);
             ps.execute();
-            return true;
+            Employee emp = new Employee(firstName, lastName, email, password, active, verified);
+            return emp;
         } catch (SQLException e) {
             System.out.println("SQL Error : "  + e.getMessage());
-            return false;
+            return null;
         }
     }
 
     public static List<Employee> all() {
-        String sql = "select * from user";
+        String sql = "select * from employee";
         ArrayList<Employee> employees = new ArrayList<>();
         try {
             Connection conn = SqlConnect.dbConnect("boula", "paolo");
@@ -61,14 +63,15 @@ public class EmployeeDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                Employee usr = new Employee(
-                        rs.getString("user_name"),
+                Employee emp = new Employee(
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
                         rs.getString("email"),
                         rs.getString("password"),
                         rs.getBoolean("active"),
                         rs.getBoolean("verified")
                 );
-                employees.add(usr);
+                employees.add(emp);
             }
 
         } catch (SQLException e) {

@@ -1,3 +1,4 @@
+import models.Employee;
 import repos.EmployeeDAO;
 
 public class Main {
@@ -9,15 +10,37 @@ public class Main {
             System.out.println("error create table");
         }
 
-//        Boolean john = UsersDAO.createUser("John", "john@gmail.com", "000000", true);
-//        Boolean mary = UsersDAO.createUser("Mary", "paolo@yahoo.com", "000000", true);
-//        Boolean keven = UsersDAO.createUser("Keven", "keven@gmail.com", "000000", false);
-//        if (john) {
-//            System.out.println("record create successfully");
+        Employee john = EmployeeDAO.createEmployee(
+                "John",
+                "Doe",
+                "john@gmail.com",
+                "000000",
+                true,
+                false
+        );
+        Employee keven = EmployeeDAO.createEmployee(
+                "Keven",
+                "McLeen",
+                "keven@gmail.com",
+                "000000",
+                true,
+                false
+        );
+        Employee mary = EmployeeDAO.createEmployee(
+                "Mary",
+                "Smith",
+                "mary@gmail.com",
+                "000000",
+                true,
+                false
+        );
+//        if (john != null) {
+//            System.out.println(john);
 //        } else {
 //            System.out.println("error create record");
 //        }
 
+        System.out.println(EmployeeDAO.all());
     }
 
 

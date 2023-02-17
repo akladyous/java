@@ -12,19 +12,19 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String userName, String email, String password, Boolean active, Boolean verified) {
-        this.firstName = userName;
-        this.lastName = userName;
+    public Employee(int id, String firstName, String lastName, String email, String password, Boolean active, Boolean verified) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.active = active;
         this.verified = verified;
     }
 
-    public Employee(int id, String userName, String email, String password, Boolean active, Boolean verified) {
-        this.id = id;
-        this.firstName = userName;
-        this.lastName = userName;
+    public Employee(String firstName, String lastName, String email, String password, Boolean active, Boolean verified) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.active = active;
