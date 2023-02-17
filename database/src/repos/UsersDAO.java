@@ -1,9 +1,12 @@
 package repos;
 
+import models.User;
 import utils.FileUtil;
 import utils.SqlConnect;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsersDAO {
 
@@ -11,13 +14,11 @@ public class UsersDAO {
 
     }
 
-    public static Boolean createUsersTable() {
+    public static Boolean createUserTable() {
         try {
             String sql = FileUtil.parseSQLFile("create_users.sql");
             Connection conn = SqlConnect.dbConnect("boula", "paolo");
             Statement statement = conn.createStatement();
-//            ResultSet rs = statement.executeQuery(sql);
-//            statement.executeQuery(sql);
             statement.execute(sql);
             return true;
         } catch (SQLException e) {
@@ -26,7 +27,7 @@ public class UsersDAO {
         }
     }
 
-    public static Boolean createUsers(String userName, String email,String password,Boolean verified) {
+    public static Boolean createUser(String userName, String email,String password,Boolean verified) {
         String sql = "INSERT INTO users (username, email, password, verified) VALUES (?, ?, ?, ?)";
         try {
             Connection conn = SqlConnect.dbConnect("boula", "paolo");
@@ -41,5 +42,31 @@ public class UsersDAO {
             System.out.println("SQL Error : "  + e.getMessage());
             return false;
         }
+    }
+
+    public static List<User> all() {
+        String sql = "select * from user";
+        ArrayList<User> users = new ArrayList<>();
+        try {
+            Connection conn = SqlConnect.dbConnect("boula", "paolo");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                User usr = new User(
+                        rs.getString("user_name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getBoolean("active"),
+                        rs.getBoolean("verified")
+                );
+                users.add(usr);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("SQL Error : "  + e.getMessage());
+            return null;
+        }
+        return users;
     }
 }
