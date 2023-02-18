@@ -7,19 +7,14 @@ import java.util.List;
 public class ClassDemo {
 
     public static void main(String[] args) {
-        String UserName = User.name;
-        User paolo = new User();
-        Integer user_id = paolo.getId();
-        paolo.setId(1);
-        System.out.println(User.name);
-        System.out.println(User.prova);
-        System.out.println(User.getCounter());
+        Cat trappola = new Cat("trappola", 4, "secco");
 
 
-        List<Field>  fields = Arrays.asList(User.class.getDeclaredFields());
-        for (Field f: fields) {
-            System.out.println(f.getName());
-        }
+        System.out.println(trappola);
+//        List<Field>  fields = Arrays.asList(User.class.getDeclaredFields());
+//        for (Field f: fields) {
+//            System.out.println(f.getName());
+//        }
     }
 
 }
