@@ -27,7 +27,17 @@ public class ArrayDemo {
 
         int[] arrInt4 = {1,2,3,4,5};
         int[] arrInt5 = {1,2,3,4,5};
-
+        if (Arrays.equals(arrInt4, arrInt5)) {
+            System.out.println("Arrays are equals");
+        } else {
+            System.out.println("Arrays are not equals");
+        }
+        String[] stringArr1 = {"one", "two", "three", "four", "five"};
+        ArrayList<String> ar1 = new ArrayList<>(List.of("six", "seven", "eight", "nine", "ten"));
+        ar1.addAll(ar1);
+        System.out.println("Array List added " + ar1);
+        var newArray = ar1.toArray(new String[ar1.size()]);
+        System.out.println("newArray : " + Arrays.toString(newArray));
 
     }
 
