@@ -2,14 +2,16 @@ package com.practice.arrays;
 
 import com.practice.klass.Animal;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ArrayDemo {
 
     public static void main(String[] args) {
+        int[] randomNumbers = generateRandomNumbers(1, 10);
+        System.out.println(Arrays.toString(randomNumbers));
+    }
+
+    private static void provaOne(){
         Animal[] animal = new Animal[5];
         animal[0] = new Animal("one", 3);
         Animal a1 = new Animal("one", 3);
@@ -23,5 +25,14 @@ public class ArrayDemo {
         ArrayList<Integer>  arrayListInt2 = new ArrayList<>();
         listInt1.sort(Comparator.naturalOrder());
         System.out.println(listInt1);
+    }
+
+    private static int[] generateRandomNumbers(Integer from, Integer to) {
+        Random random = new Random();
+        int[] randomNums = new int[to];
+        for (int i = 0; i < to ; i++) {
+            randomNums[i] = random.nextInt(from, to);
+        }
+        return randomNums;
     }
 }
