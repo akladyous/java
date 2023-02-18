@@ -8,6 +8,6 @@ CREATE TABLE employee (
     password VARCHAR(64) NOT NULL CHECK (CHAR_LENGTH(password) BETWEEN 6 AND 64),
     active BOOLEAN DEFAULT true,
     verified BOOLEAN DEFAULT false,
-    created_at TIMESTAMP DEFAULT current_timestamp
+    zcreated_at TIMESTAMP DEFAULT current_timestamp
 );
 
