@@ -2,7 +2,7 @@ package com.practice.abstraction;
 
 public class Cat extends Animal {
     public void sound() {
-        System.out.println("meao");
+        System.out.println("mean");
     }
 
 }
