@@ -15,7 +15,7 @@ public class ArrayDemo {
         Animal a1 = new Animal("one", 3);
         animal[1] = a1;
 
-        ArrayList<Integer> arrInt = new ArrayList<>(Arrays.asList(1,2,3,4));
+        ArrayList<Integer> arrInt = new ArrayList<>(Arrays.asList(8,1,9,5,3,4,2,1,6));
         arrInt.add(5);
         System.out.println(arrInt);
 
