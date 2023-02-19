@@ -33,6 +33,7 @@ public class ArrayDemo {
             System.out.println("Arrays are not equals");
         }
         String[] stringArr1 = {"one", "two", "three", "four", "five"};
+
         ArrayList<String> ar1 = new ArrayList<>(List.of("six", "seven", "eight", "nine", "ten"));
         ar1.addAll(ar1);
         System.out.println("Array List added " + ar1);
