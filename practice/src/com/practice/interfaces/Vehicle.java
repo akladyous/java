@@ -1,11 +1,13 @@
 package com.practice.interfaces;
 
+import com.practice.enumeration.ToyotaModels;
+
+import java.util.List;
+
 public interface Vehicle {
     public static final String manufacture = "Japan";
 
-		public enum models {
-			ONE, TWO, THREE
-		}
+		List<ToyotaModels> models = null;
 
 		public abstract void addFeatures(String feature);
     public static void info() {
