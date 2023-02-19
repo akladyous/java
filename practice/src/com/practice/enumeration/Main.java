@@ -5,14 +5,17 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) {
-		DayOfWeeks monday = DayOfWeeks.MONDAY;
-		System.out.println(monday);
+		DayOfWeeks dayWeek = DayOfWeeks.MONDAY;
+		System.out.println(dayWeek);
+		System.out.printf("Name is %s - Ordinal %d \n", dayWeek.name(), dayWeek.ordinal());
 
-		System.out.printf("Name is %s - Ordinal %d \n", monday.name(), monday.ordinal());
 		System.out.println("-".repeat(40));
 		for (int i = 0; i < 7; i++) {
 			DayOfWeeks randomDay = getRandomDay();
-			System.out.println(randomDay.name());
+			System.out.printf(
+							"Day is %-10s Ordinal %-2d %s \n",
+							randomDay.name(), randomDay.ordinal(), randomDay.weekEnds()
+			);
 		}
 	}
 
