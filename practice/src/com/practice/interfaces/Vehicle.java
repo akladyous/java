@@ -13,7 +13,6 @@ public interface Vehicle {
     public static void info() {
         System.out.println("from static method");
         System.out.println("called private method: baz");
-
     }
     public default void printDescription() {
         System.out.println("from default method");
