@@ -2,17 +2,16 @@ package com.practice.enumeration;
 
 public enum ToyotaModels {
 
-	AVALON("XX50", 1994),
-	BELTA("Belta", 2005),
-	BZ3("BZ23", 2022),
-	CAMRY("XV70", 1982),
-	CENTURY("G50", 1967),
-	COROLLA("E210", 1966);
+	AVALON(1994),
+	BELTA(2005),
+	BZ3(2022),
+	CAMRY(1982),
+	CENTURY(1967),
+	COROLLA( 1966);
 
 	private final Integer year;
-	private final String model;
-	ToyotaModels(String model, Integer year) {
-		this.model = model;
+
+	ToyotaModels(Integer year) {
 		this.year = year;
 	}
 
@@ -20,9 +19,10 @@ public enum ToyotaModels {
 		return year;
 	}
 
-	public String getModel() {
-		return model;
+	@Override
+	public String toString() {
+		return "ToyotaModels{" +
+						"year=" + year +
+						'}';
 	}
-
-
 }

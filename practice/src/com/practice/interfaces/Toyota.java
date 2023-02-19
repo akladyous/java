@@ -1,5 +1,7 @@
 package com.practice.interfaces;
 
+import com.practice.enumeration.ToyotaModels;
+
 import java.util.ArrayList;
 
 public class Toyota implements Vehicle {
@@ -13,7 +15,12 @@ public class Toyota implements Vehicle {
 		this.model = model;
 		this.color = color;
 		this.year = year;
+	}
 
+	public static void main(String[] args) {
+		Vehicle.info();
+		Toyota camry = new Toyota("camry", "white", 2023);
+		camry.printDescription();
 	}
 
 	@Override
