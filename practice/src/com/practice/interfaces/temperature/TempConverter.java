@@ -1,4 +1,6 @@
-package com.practice.interfaces;
+package com.practice.interfaces.temperature;
+
+import com.practice.interfaces.temperature.TemperatureConverter;
 
 public class TempConverter implements TemperatureConverter {
 

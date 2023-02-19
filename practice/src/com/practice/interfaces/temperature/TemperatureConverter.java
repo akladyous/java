@@ -1,4 +1,4 @@
-package com.practice.interfaces;
+package com.practice.interfaces.temperature;
 
 public interface TemperatureConverter {
     double fahrenheitToCelcius(double temp);
