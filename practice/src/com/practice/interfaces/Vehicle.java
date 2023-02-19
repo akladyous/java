@@ -1,9 +1,14 @@
 package com.practice.interfaces;
 
 public interface Vehicle {
-    public static final Integer value = 1;
+    public static final String manufacture = "Japan";
 
-    public abstract void make();
+		public enum models {
+			ONE, TWO, THREE
+		}
+2310
+
+		public abstract void addFeatures(String feature);
     public static void info() {
         System.out.println("from static method");
         System.out.println("called private method: baz");
