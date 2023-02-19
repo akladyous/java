@@ -6,7 +6,6 @@ public interface Vehicle {
 		public enum models {
 			ONE, TWO, THREE
 		}
-2310
 
 		public abstract void addFeatures(String feature);
     public static void info() {
