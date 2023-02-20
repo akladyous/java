@@ -1,7 +1,6 @@
 package com.practice.enumeration;
 
 public enum ToyotaModels {
-
 	AVALON(1994),
 	BELTA(2005),
 	BZ3(2022),
