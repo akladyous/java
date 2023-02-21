@@ -19,10 +19,10 @@ public class ArrayDemo {
         System.out.println(Arrays.toString(arrInt3));
 
         Integer matchIndex;
-        String[] names = {"Alba", "Jane", "Mark", "Ralph", "David"};
-        Arrays.sort(names);
-        System.out.println("names sorted : " + Arrays.toString(names));
-        matchIndex = Arrays.binarySearch(names, "David");
+        String[] arrStr1 = {"Alba", "Jane", "Mark", "Ralph", "David"};
+        Arrays.sort(arrStr1);
+        System.out.println("arrStr1 sorted : " + Arrays.toString(arrStr1));
+        matchIndex = Arrays.binarySearch(arrStr1, "David");
         System.out.println("matchIndex : " + matchIndex);
 
         int[] arrInt4 = {1,2,3,4,5};
@@ -32,7 +32,6 @@ public class ArrayDemo {
         } else {
             System.out.println("Arrays are not equals");
         }
-        String[] stringArr1 = {"one", "two", "three", "four", "five"};
 
         ArrayList<String> ar1 = new ArrayList<>(List.of("six", "seven", "eight", "nine", "ten"));
         ar1.addAll(ar1);
@@ -40,6 +39,25 @@ public class ArrayDemo {
         var newArray = ar1.toArray(new String[ar1.size()]);
         System.out.println("newArray : " + Arrays.toString(newArray));
 
+				System.out.println("-".repeat(40));
+        String[] arrStr2 = {"one", "two", "three", };
+        String[] arrStr3 = {"four", "five", "six"};
+				ArrayList<String> arrStr4 = new ArrayList<>();
+
+				arrStr4.addAll(Arrays.asList(arrStr2));
+				arrStr4.addAll(new ArrayList<>(List.of(arrStr3)));
+				System.out.println("arrStr4 : " + arrStr4);
+				Collections.shuffle(arrStr4);
+				Boolean deepEquals1 = Arrays.deepEquals(
+								new List[] {Arrays.asList(arrStr2)},
+								new List[] {List.of(arrStr2)}
+				);
+				Boolean deepEquals2 = Arrays.deepEquals(
+								new List[] {Arrays.asList(arrStr2)},
+								new ArrayList[] {arrStr4}
+				);
+				System.out.println("deepEquals : " + deepEquals1.toString());
+				System.out.println("deepEquals : " + deepEquals2.toString());
     }
 
     private static void provaOne(){
