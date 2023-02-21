@@ -44,7 +44,16 @@ public class StringDemo {
     String name = getName("paolo");
     System.out.println(name);
     System.out.println("-".repeat(40));
+
+
+    String str4 = new String("ABC");
+    String str5 = str4.concat("DEF");
+    System.out.println(str5);
+
   }
+
+
+
 
   public static String charsToUpperCase(String string) {
     List<Character> arrChars = new ArrayList<>();

@@ -82,7 +82,7 @@ public class ArrayDemo {
         listInt1.sort(Comparator.naturalOrder());
         System.out.println(listInt1);
     }
-
+    
     private static int[] generateRandomNumbers(Integer size) {
         Random random = new Random();
         int[] randomNums = new int[size];
