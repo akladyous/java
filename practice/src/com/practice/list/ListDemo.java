@@ -22,5 +22,8 @@ public class ListDemo {
 
         Predicate<Integer> isValid = phone -> { return phone == 1; };
 
+        String s1 = "aaa";
+
+
     }
 }
