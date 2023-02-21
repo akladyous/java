@@ -8,10 +8,12 @@ public class ArrayDemo {
 
     public static void main(String[] args) {
         int[] arrInt1 = generateRandomNumbers( 10);
+        /* SORT Method */
         Arrays.sort(arrInt1);
         System.out.println(Arrays.toString(arrInt1));
 
         int[] arrInt2 = new int[5];
+        /* FILL Method */
         Arrays.fill(arrInt2, 5);
         System.out.println(Arrays.toString(arrInt2));
 
@@ -20,8 +22,10 @@ public class ArrayDemo {
 
         Integer matchIndex;
         String[] arrStr1 = {"Alba", "Jane", "Mark", "Ralph", "David"};
+        /* SORT Method */
         Arrays.sort(arrStr1);
         System.out.println("arrStr1 sorted : " + Arrays.toString(arrStr1));
+        /* BinarySearch Method */
         matchIndex = Arrays.binarySearch(arrStr1, "David");
         System.out.println("matchIndex : " + matchIndex);
 
