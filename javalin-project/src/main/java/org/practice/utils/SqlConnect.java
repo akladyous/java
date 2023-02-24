@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class SqlConnect  {
-  private static String packageName = Main.class.getPackageName();
+
   private static String url = "jdbc:postgresql://localhost/practice";
   private static Connection connection = null;
 
