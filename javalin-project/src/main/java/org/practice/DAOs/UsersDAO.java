@@ -7,6 +7,7 @@ import java.util.List;
 public interface UsersDAO {
 
     String tableName = "users";
+
     enum Attributes {
         ID,
         first_name,
@@ -17,10 +18,10 @@ public interface UsersDAO {
         verified
     }
 
-    User createUser() throws DAOsException;
-    User getUser() throws DAOsException;
-    User updateUser() throws DAOsException;
-    Boolean deleteUser() throws DAOsException;
-    List<User> findAll() throws DAOsException;
+    List<User> getAllUsers();
+    User createUser(User user) throws DAOsException;
+    User getUser(int userID) throws DAOsException;
+    User updateUser(User user) throws DAOsException;
+    Boolean deleteUser(int id) throws DAOsException;
 
 }

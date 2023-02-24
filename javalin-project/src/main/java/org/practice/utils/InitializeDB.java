@@ -1,14 +1,11 @@
 package org.practice.utils;
 
 import org.practice.Main;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
-public class App {
+public class InitializeDB {
     private static String packageName = Main.class.getPackageName();
     private static Boolean initialized = false;
 
