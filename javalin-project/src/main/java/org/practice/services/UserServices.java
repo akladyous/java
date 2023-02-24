@@ -8,6 +8,12 @@ import java.util.List;
 
 public class UserServices implements UsersDAO {
 
+    private Boolean initialized = false;
+
+    private void init(){
+
+    }
+
     public UserServices() {
         super();
         System.out.println("UserServices constructor " );

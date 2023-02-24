@@ -6,11 +6,12 @@ import org.practice.models.User;
 public class Main {
     public static void main(String[] args) {
 
-    User user1 = new User();
-    System.out.println(user1.getClass().getSimpleName());
-    System.out.println(user1.getClass().getEnclosingMethod().getName());
+//    User user1 = new User();
 
+//    System.out.println(user1.getClass().getSimpleName());
+//    System.out.println(user1.getClass().getEnclosingMethod().getName());
 
+        System.out.println("prova");
 
 
     //    var app = Javalin

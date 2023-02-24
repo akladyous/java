@@ -6,6 +6,17 @@ import java.util.List;
 
 public interface UsersDAO {
 
+    String tableName = "users";
+    enum Attributes {
+        ID,
+        first_name,
+        last_name,
+        email,
+        password,
+        active,
+        verified
+    }
+
     User createUser() throws DAOsException;
     User getUser() throws DAOsException;
     User updateUser() throws DAOsException;
