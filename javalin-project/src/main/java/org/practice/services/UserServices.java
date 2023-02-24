@@ -10,6 +10,7 @@ public class UserServices implements UsersDAO {
 
     public UserServices() {
         super();
+        System.out.println("UserServices constructor " );
     }
 
     @Override

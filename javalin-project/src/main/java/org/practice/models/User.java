@@ -1,8 +1,10 @@
 package org.practice.models;
 
+import org.practice.services.UserServices;
+
 import java.util.Objects;
 
-public class User {
+public class User extends UserServices {
     private Integer id;
     private String firstName;
     private String lastName;

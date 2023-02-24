@@ -6,11 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileUtil {
+
   public static String parseSQLFile(String fileName) {
+
     StringBuilder query = new StringBuilder();
     String sqlFile = System
         .getProperty("user.dir")
-        .concat("/data/")
+        .concat("/script/sql/users")
         .concat(fileName);
     File script = new File(sqlFile);
     BufferedReader reader = null;
