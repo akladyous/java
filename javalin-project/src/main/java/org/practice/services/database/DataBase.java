@@ -1,11 +1,10 @@
 package org.practice.services.database;
 
-import org.practice.DAOs.database.DatabaseDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataBase  {
+public abstract class DataBase  {
 
     String dbName = "practice";
     List<String> dbTables = new ArrayList<>();
@@ -14,10 +13,6 @@ public class DataBase  {
 
     }
 
-    static void initializeDB(){
-
-    };
-    static void initializeTables(){
-
-    };
+    public abstract void initializeDB();
+    public abstract void initializeTables();
 }
