@@ -49,6 +49,10 @@ public class EmployeeDAO {
       ps.setBoolean(6, verified);
       ps.execute();
       Employee emp = new Employee(firstName, lastName, email, password, active, verified);
+
+      ResultSet rs = ps.getGeneratedKeys();
+      rs.getInt(1);
+
       return emp;
     } catch (SQLException e) {
       System.out.println("SQL Error : " + e.getMessage());
