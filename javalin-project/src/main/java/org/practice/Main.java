@@ -2,6 +2,7 @@ package org.practice;
 
 import io.javalin.Javalin;
 import org.practice.models.User;
+import org.practice.utils.App;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +13,8 @@ public class Main {
 //    System.out.println(user1.getClass().getEnclosingMethod().getName());
 
         System.out.println("prova");
+        App.initializeDB();
+        App.initializeTables();
 
 
     //    var app = Javalin

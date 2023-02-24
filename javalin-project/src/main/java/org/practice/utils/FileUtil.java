@@ -12,7 +12,7 @@ public class FileUtil {
     StringBuilder query = new StringBuilder();
     String sqlFile = System
         .getProperty("user.dir")
-        .concat("/script/sql/users")
+        .concat("/")
         .concat(fileName);
     File script = new File(sqlFile);
     BufferedReader reader = null;

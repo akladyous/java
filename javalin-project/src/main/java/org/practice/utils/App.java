@@ -3,7 +3,6 @@ package org.practice.utils;
 import org.practice.Main;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -11,37 +10,35 @@ import java.util.List;
 
 public class App {
     private static String packageName = Main.class.getPackageName();
-    private static String DB_NAME = "practice";
     private static Boolean initialized = false;
-    List<String> dbTables = new ArrayList<>();
 
-    public static void main(String[] args) {
-        if (! initialized) {
-            initializeDB();
-            initializeDB();
-            initialized = true;
-        };
-    };
-
-    private static void initializeDB(){
-        String sql = FileUtil.parseSQLFile("create_database.sql");
+    public static Boolean initializeDB(){
+        String query = "src/main/script/sql/create_database.sql";
+        String sql = FileUtil.parseSQLFile(query);
+        if (sql.isBlank() || sql.isEmpty()) return false;
         try {
             Connection conn = SqlConnect.dbConnect();
             Statement statement = conn.createStatement();
             statement.execute(sql);
+            return true;
         } catch (SQLException e) {
             System.out.println("SQL Error : " + e.getMessage());
+            return false;
         }
     };
 
-    private static void initializeTables(){
-        String sql = FileUtil.parseSQLFile("create_tables.sql");
+    public static Boolean initializeTables(){
+        String query = "src/main/script/sql/create_tables.sql";
+        String sql = FileUtil.parseSQLFile(query);
+        if (sql.isBlank() || sql.isEmpty()) return false;
         try {
             Connection conn = SqlConnect.dbConnect();
             Statement statement = conn.createStatement();
             statement.execute(sql);
+            return true;
         } catch (SQLException e) {
             System.out.println("SQL Error : " + e.getMessage());
+            return false;
         }
     };
 }
