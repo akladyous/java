@@ -14,4 +14,10 @@ public class DataBase  {
 
     }
 
+    static void initializeDB(){
+
+    };
+    static void initializeTables(){
+
+    };
 }
