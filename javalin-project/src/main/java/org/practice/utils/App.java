@@ -35,7 +35,7 @@ public class App {
     };
 
     private static void initializeTables(){
-        String sql = FileUtil.parseSQLFile("create_database.sql");
+        String sql = FileUtil.parseSQLFile("create_tables.sql");
         try {
             Connection conn = SqlConnect.dbConnect();
             Statement statement = conn.createStatement();
