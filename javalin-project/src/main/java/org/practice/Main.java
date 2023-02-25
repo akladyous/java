@@ -7,22 +7,25 @@ import org.practice.utils.InitializeDB;
 public class Main {
     public static void main(String[] args) {
 
-        User u1 = new User();
+//        InitializeDB.initializeDB();
+        InitializeDB.initializeTables();
 
+        String uuid = java.util.UUID.randomUUID().toString();
+
+        User u1 = new User("john", "doe", "john@gmail.com", "000000");
+        User john = u1.createUser(u1);
+        System.out.println(john);
 
 //    System.out.println(user1.getClass().getSimpleName());
 //    System.out.println(user1.getClass().getEnclosingMethod().getName());
 
-        System.out.println("prova");
-        InitializeDB.initializeDB();
-        InitializeDB.initializeTables();
-
-
-
-        var app = Javalin
-                          .create()
-                          .get("/", ctx -> ctx.result("ciao").status(200))
-                          .start(4000);
+//
+//
+//
+//        var app = Javalin
+//                          .create()
+//                          .get("/", ctx -> ctx.result("ciao").status(200))
+//                          .start(4000);
     }
 
 }

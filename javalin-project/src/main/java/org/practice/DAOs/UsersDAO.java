@@ -24,4 +24,18 @@ public interface UsersDAO {
     User updateUser(User user) throws DAOsException;
     Boolean deleteUser(int id) throws DAOsException;
 
+
+    /*
+    update
+    destroy
+    update
+    save
+
+    class methods
+        create
+        .all
+        find
+        destroy
+        find
+    */
 }

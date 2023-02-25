@@ -11,18 +11,22 @@ public class User extends UserServices {
     private String email;
     private String password;
     private Boolean active = true;
-    private Boolean verified;
+    private Boolean verified = false;
 
     public User() {};
 
-    public User(Integer id, String firstName, String lastName, String email, String password, Boolean active, Boolean verified) {
+    public User(Integer id, String firstName, String lastName, String email, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.active = active;
-        this.verified = verified;
+    }
+    public User(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
     }
 
     public Integer getId() {

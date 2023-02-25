@@ -6,21 +6,17 @@ import org.practice.models.User;
 import org.practice.utils.FileUtil;
 import org.practice.utils.SqlConnect;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserServices implements UsersDAO {
 
-    public static List<User> users = new ArrayList<>();
-
-    private void init(){
-
-    }
+    private static List<User> users = new ArrayList<>();
 
     public UserServices() {
         super();
-        System.out.println("UserServices constructor " );
     }
 
     @Override
@@ -31,15 +27,16 @@ public class UserServices implements UsersDAO {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                User usr = new User(
+                User matchUser = new User(
                         rs.getInt("id"),
                         rs.getString("first_name"),
                         rs.getString("last_name"),
                         rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getBoolean("active"),
-                        rs.getBoolean("verified"));
-                users.add(usr);
+                        rs.getString("password")
+                );
+                matchUser.setActive(rs.getBoolean("active"));
+                matchUser.setVerified(rs.getBoolean("verified"));
+                users.add(matchUser);
             };
         } catch (SQLException e) {
             System.out.println("SQL Error : " + e.getMessage());
@@ -49,7 +46,71 @@ public class UserServices implements UsersDAO {
     }
 
     @Override
-    public User createUser(User user) throws DAOsException {
+    public User createUser(User user) {
+//        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
+        String sql = "INSERT INTO users\n" +
+                             "(first_name, last_name, email, password, active, verified)\n" +
+                             "VALUES (?, ?, ?, ?, ?, ?)";
+        Connection conn = SqlConnect.dbConnect();
+        User matchUser = new User();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, user.getFirstName());
+            ps.setString(2, user.getLastName());
+            ps.setString(3, user.getEmail());
+            ps.setString(4, user.getPassword());
+            ps.setBoolean(5, user.getActive());
+            ps.setBoolean(6, user.getVerified());
+            ps.execute();
+            ResultSet rs = ps.getGeneratedKeys();
+            ps.getGeneratedKeys();
+            while (rs.next()) {
+                matchUser.setId(rs.getInt("id"));
+                matchUser.setFirstName(rs.getString("first_name"));
+                matchUser.setLastName(rs.getString("last_name"));
+                matchUser.setEmail(rs.getString("email"));
+                matchUser.setPassword(rs.getString("password"));
+                matchUser.setActive(rs.getBoolean("active"));
+                matchUser.setVerified(rs.getBoolean("verified"));
+            };
+        } catch (SQLIntegrityConstraintViolationException ce) {
+            System.out.println("SQL Integrity Constraint Violation Exception");
+            System.out.println(ce.getMessage());
+        }  catch (SQLException e) {
+                System.out.println("SQL Error : " + e.getMessage());
+
+            return null;
+        };
+        return matchUser;
+    };
+
+    @Override
+    public User getUser(int userID) throws DAOsException {
+        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
+        try {
+            Connection conn = SqlConnect.dbConnect();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, String.valueOf(userID));
+            ResultSet rs = ps.executeQuery();
+            User matchUser = new User(
+                    rs.getInt("id"),
+                    rs.getString("first_name"),
+                    rs.getString("last_name"),
+                    rs.getString("email"),
+                    rs.getString("password")
+            );
+            matchUser.setActive(rs.getBoolean("active"));
+            matchUser.setVerified(rs.getBoolean("verified"));
+
+            return matchUser;
+        } catch (SQLException e) {
+            System.out.println("SQL Error : " + e.getMessage());
+            return null;
+        }
+    };
+
+    @Override
+    public User updateUser(User user) throws DAOsException {
         String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
         try {
             Connection conn = SqlConnect.dbConnect();
@@ -70,35 +131,6 @@ public class UserServices implements UsersDAO {
             return null;
         }
         return user;
-    }
-
-    @Override
-    public User getUser(int userID) throws DAOsException {
-        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
-        try {
-            Connection conn = SqlConnect.dbConnect();
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, String.valueOf(userID));
-            ResultSet rs = ps.executeQuery();
-            User matchUser = new User(
-                    rs.getInt("id"),
-                    rs.getString("first_name"),
-                    rs.getString("last_name"),
-                    rs.getString("email"),
-                    rs.getString("password"),
-                    rs.getBoolean("active"),
-                    rs.getBoolean("verified")
-            );
-            return matchUser;
-        } catch (SQLException e) {
-            System.out.println("SQL Error : " + e.getMessage());
-            return null;
-        }
-    };
-
-    @Override
-    public User updateUser(User user) throws DAOsException {
-        return null;
     }
 
     @Override

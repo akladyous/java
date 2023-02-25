@@ -1,5 +1,6 @@
 package org.practice.utils;
 
+import org.practice.DAOs.DAOsException;
 import org.practice.Main;
 
 import java.sql.Connection;
@@ -9,13 +10,14 @@ import java.util.Properties;
 
 public class SqlConnect  {
 
-  private static String url = "jdbc:postgresql://localhost/practice";
+//  private static String url = "jdbc:postgresql://localhost/practice";
+  private static String url = "jdbc:mysql://localhost:3306/practice";
   private static Connection connection = null;
 
   public static void main(String[] args) {
   }
 
-  public static Connection dbConnect() {
+  public static Connection dbConnect()  {
     Properties props = new Properties();
     String userName = System.getenv("POSTGRES_USER");
     String password = System.getenv("POSTGRES_PASSWORD");
@@ -23,8 +25,7 @@ public class SqlConnect  {
     props.setProperty("password", password);
     if (connection == null) {
       try {
-        connection = DriverManager.getConnection(url, props);
-
+        connection = DriverManager.getConnection(url, "root", "paolo");
       } catch (SQLException e) {
         System.out.println("Database Connect Error : " + e.getMessage() + '\n');
       }
