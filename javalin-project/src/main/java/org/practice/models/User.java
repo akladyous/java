@@ -1,6 +1,6 @@
 package org.practice.models;
 
-import org.practice.services.UserServices;
+import org.practice.services.users.UserServices;
 
 import java.util.Objects;
 

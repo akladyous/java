@@ -1,21 +1,18 @@
 package org.practice.utils;
 
-import org.practice.DAOs.DAOsException;
-import org.practice.Main;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class SqlConnect  {
+public class JDBCUtils {
 //  private static final String url = "jdbc:postgresql://localhost/practice";
   private static final String url = "jdbc:mysql://localhost:3306/practice";
   private static Connection connection = null;
   public static void main(String[] args) {
   }
 
-  public static Connection dbConnect()  {
+  public static Connection dbConnect() throws SQLException  {
     Properties props = new Properties();
     String userName = System.getenv("SQL_USER");
     String password = System.getenv("SQL_PASSWORD");
@@ -23,11 +20,27 @@ public class SqlConnect  {
     props.setProperty("password", password);
     if (connection == null) {
       try {
-        connection = DriverManager.getConnection(url, "root", "paolo");
+        connection = DriverManager.getConnection(url, userName, password);
       } catch (SQLException e) {
         System.out.println("Database Connect Error : " + e.getMessage() + '\n');
       }
     }
     return connection;
+  };
+
+  public static void printSQLException(SQLException ex) {
+    for (Throwable e: ex) {
+      if (e instanceof SQLException) {
+        e.printStackTrace(System.err);
+        System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+        System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+        System.err.println("Message: " + e.getMessage());
+        Throwable t = ex.getCause();
+        while (t != null) {
+          System.out.println("Cause: " + t);
+          t = t.getCause();
+        }
+      }
+    }
   }
 }

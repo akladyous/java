@@ -1,12 +1,11 @@
-package org.practice.services;
+package org.practice.services.users;
 
-import org.practice.DAOs.DAOsException;
-import org.practice.DAOs.UsersDAO;
+import org.practice.DAOs.users.DAOsException;
+import org.practice.DAOs.users.UsersDAO;
 import org.practice.models.User;
 import org.practice.utils.FileUtil;
-import org.practice.utils.SqlConnect;
+import org.practice.utils.JDBCUtils;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +19,45 @@ public class UserServices implements UsersDAO {
     }
 
     @Override
+    public User update(User user) throws DAOsException {
+        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
+        try {
+            Connection conn = JDBCUtils.dbConnect();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, user.getFirstName());
+            ps.setString(2, user.getLastName());
+            ps.setString(3, user.getEmail());
+            ps.setString(4, user.getPassword());
+            ps.setBoolean(5, user.getActive());
+            ps.setBoolean(6, user.getVerified());
+            ps.execute();
+
+            ResultSet rs = ps.getGeneratedKeys();
+            user.setId(rs.getInt(1));
+
+        } catch (SQLException e) {
+            System.out.println("SQL Error : " + e.getMessage());
+            return null;
+        }
+        return user;
+    }
+
+    @Override
+    public Boolean delete(int id) throws DAOsException {
+        return null;
+    }
+
+    @Override
+    public User save() {
+        return null;
+    }
+
+
+    @Override
     public List<User> getAllUsers() {
         String sql = "SELECT * FROM users;";
         try {
-            Connection conn = SqlConnect.dbConnect();
+            Connection conn = JDBCUtils.dbConnect();
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
@@ -46,9 +80,9 @@ public class UserServices implements UsersDAO {
     }
 
     @Override
-    public User createUser(User user) {
+    public User createUser(User user) throws SQLException {
         String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
-        Connection conn = SqlConnect.dbConnect();
+        Connection conn = JDBCUtils.dbConnect();
         User matchUser = new User();
         PreparedStatement stmt = null;
         try {
@@ -94,9 +128,9 @@ public class UserServices implements UsersDAO {
     public User getUser(int userID) throws DAOsException {
         String sql = FileUtil.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
         try {
-            Connection conn = SqlConnect.dbConnect();
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, String.valueOf(userID));
+            Connection conn = JDBCUtils.dbConnect();
+            PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, userID);
             ResultSet rs = ps.executeQuery();
             User matchUser = new User(
                     rs.getInt("id"),
@@ -115,34 +149,9 @@ public class UserServices implements UsersDAO {
         }
     };
 
-    @Override
-    public User updateUser(User user) throws DAOsException {
-        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
-        try {
-            Connection conn = SqlConnect.dbConnect();
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, user.getPassword());
-            ps.setBoolean(5, user.getActive());
-            ps.setBoolean(6, user.getVerified());
-            ps.execute();
 
-            ResultSet rs = ps.getGeneratedKeys();
-            user.setId(rs.getInt(1));
 
-        } catch (SQLException e) {
-            System.out.println("SQL Error : " + e.getMessage());
-            return null;
-        }
-        return user;
-    }
 
-    @Override
-    public Boolean deleteUser(int id) throws DAOsException {
-        return null;
-    }
 
     public User getUserByFirstName(String firstName) {
         return users
@@ -154,8 +163,28 @@ public class UserServices implements UsersDAO {
                .orElse(null);
     }
 
-    public User getUserByID(int id) {
-        return null;
+    public User getUserByID(int userID) {
+        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
+        try {
+            Connection conn = JDBCUtils.dbConnect();
+            PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, userID);
+            ResultSet rs = ps.executeQuery();
+            User matchUser = new User(
+                    rs.getInt("id"),
+                    rs.getString("first_name"),
+                    rs.getString("last_name"),
+                    rs.getString("email"),
+                    rs.getString("password")
+            );
+            matchUser.setActive(rs.getBoolean("active"));
+            matchUser.setVerified(rs.getBoolean("verified"));
+
+            return matchUser;
+        } catch (SQLException e) {
+            System.out.println("SQL Error : " + e.getMessage());
+            return null;
+        }
     }
 
 

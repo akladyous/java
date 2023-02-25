@@ -14,7 +14,7 @@ public class InitializeDB {
         String sql = FileUtil.parseSQLFile(query);
         if (sql.isBlank() || sql.isEmpty()) return false;
         try {
-            Connection conn = SqlConnect.dbConnect();
+            Connection conn = JDBCUtils.dbConnect();
             Statement statement = conn.createStatement();
             statement.execute(sql);
             return true;
@@ -29,7 +29,7 @@ public class InitializeDB {
         String sql = FileUtil.parseSQLFile(query);
         if (sql.isBlank() || sql.isEmpty()) return false;
         try {
-            Connection conn = SqlConnect.dbConnect();
+            Connection conn = JDBCUtils.dbConnect();
             Statement statement = conn.createStatement();
             statement.execute(sql);
             return true;

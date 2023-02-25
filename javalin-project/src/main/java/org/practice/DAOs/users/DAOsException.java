@@ -1,4 +1,4 @@
-package org.practice.DAOs;
+package org.practice.DAOs.users;
 
 public class DAOsException extends Exception{
     public DAOsException() {

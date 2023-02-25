@@ -1,7 +1,9 @@
-package org.practice.DAOs;
+package org.practice.DAOs.users;
 
+import org.practice.DAOs.users.DAOsException;
 import org.practice.models.User;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface UsersDAO {
@@ -19,14 +21,17 @@ public interface UsersDAO {
     }
 
     List<User> getAllUsers();
-    User createUser(User user) throws DAOsException;
+    User createUser(User user) throws DAOsException, SQLException;
     User getUser(int userID) throws DAOsException;
-    User updateUser(User user) throws DAOsException;
-    Boolean deleteUser(int id) throws DAOsException;
+
+    User update(User user) throws DAOsException;
+    Boolean delete(int id) throws DAOsException;
+    User save();
+    // void validate();
+
 
 
     /*
-    update
     destroy
     update
     save
