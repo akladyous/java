@@ -47,23 +47,21 @@ public class UserServices implements UsersDAO {
 
     @Override
     public User createUser(User user) {
-//        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
-        String sql = "INSERT INTO users\n" +
-                             "(first_name, last_name, email, password, active, verified)\n" +
-                             "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
         Connection conn = SqlConnect.dbConnect();
         User matchUser = new User();
+        PreparedStatement stmt = null;
         try {
-            PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, user.getPassword());
-            ps.setBoolean(5, user.getActive());
-            ps.setBoolean(6, user.getVerified());
-            ps.execute();
-            ResultSet rs = ps.getGeneratedKeys();
-            ps.getGeneratedKeys();
+            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getFirstName());
+            stmt.setString(2, user.getLastName());
+            stmt.setString(3, user.getEmail());
+            stmt.setString(4, user.getPassword());
+            stmt.setBoolean(5, user.getActive());
+            stmt.setBoolean(6, user.getVerified());
+            stmt.execute();
+            ResultSet rs = stmt.getGeneratedKeys();
+            stmt.getGeneratedKeys();
             while (rs.next()) {
                 matchUser.setId(rs.getInt("id"));
                 matchUser.setFirstName(rs.getString("first_name"));
@@ -76,11 +74,19 @@ public class UserServices implements UsersDAO {
         } catch (SQLIntegrityConstraintViolationException ce) {
             System.out.println("SQL Integrity Constraint Violation Exception");
             System.out.println(ce.getMessage());
+            return null;
         }  catch (SQLException e) {
                 System.out.println("SQL Error : " + e.getMessage());
-
             return null;
-        };
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch ( SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
         return matchUser;
     };
 

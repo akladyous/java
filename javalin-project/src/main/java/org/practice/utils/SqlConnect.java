@@ -9,18 +9,16 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class SqlConnect  {
-
-//  private static String url = "jdbc:postgresql://localhost/practice";
-  private static String url = "jdbc:mysql://localhost:3306/practice";
+//  private static final String url = "jdbc:postgresql://localhost/practice";
+  private static final String url = "jdbc:mysql://localhost:3306/practice";
   private static Connection connection = null;
-
   public static void main(String[] args) {
   }
 
   public static Connection dbConnect()  {
     Properties props = new Properties();
-    String userName = System.getenv("POSTGRES_USER");
-    String password = System.getenv("POSTGRES_PASSWORD");
+    String userName = System.getenv("SQL_USER");
+    String password = System.getenv("SQL_PASSWORD");
     props.setProperty("userName", userName);
     props.setProperty("password", password);
     if (connection == null) {
