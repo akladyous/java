@@ -11,7 +11,7 @@ public class InitializeDB {
 
     public static Boolean initializeDB(){
         String query = "src/main/script/sql/create_database.sql";
-        String sql = FileUtil.parseSQLFile(query);
+        String sql = FileUtils.parseSQLFile(query);
         if (sql.isBlank() || sql.isEmpty()) return false;
         try {
             Connection conn = JDBCUtils.dbConnect();
@@ -26,7 +26,7 @@ public class InitializeDB {
 
     public static Boolean initializeTables(){
         String query = "src/main/script/sql/create_tables.sql";
-        String sql = FileUtil.parseSQLFile(query);
+        String sql = FileUtils.parseSQLFile(query);
         if (sql.isBlank() || sql.isEmpty()) return false;
         try {
             Connection conn = JDBCUtils.dbConnect();

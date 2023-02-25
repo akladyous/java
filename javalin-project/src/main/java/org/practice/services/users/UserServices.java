@@ -3,7 +3,7 @@ package org.practice.services.users;
 import org.practice.DAOs.users.DAOsException;
 import org.practice.DAOs.users.UsersDAO;
 import org.practice.models.User;
-import org.practice.utils.FileUtil;
+import org.practice.utils.FileUtils;
 import org.practice.utils.JDBCUtils;
 
 import java.sql.*;
@@ -20,14 +20,14 @@ public class UserServices implements UsersDAO {
 
     @Override
     public User update(User user) throws DAOsException {
-        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
+        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/create_user.sql");
         try {
             Connection conn = JDBCUtils.dbConnect();
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, user.getPassword());
+            ps.setString(1, user.firstName);
+            ps.setString(2, user.lastName);
+            ps.setString(3, user.email);
+            ps.setString(4, user.password);
             ps.setBoolean(5, user.getActive());
             ps.setBoolean(6, user.getVerified());
             ps.execute();
@@ -53,7 +53,6 @@ public class UserServices implements UsersDAO {
     }
 
 
-    @Override
     public List<User> getAllUsers() {
         String sql = "SELECT * FROM users;";
         try {
@@ -79,18 +78,17 @@ public class UserServices implements UsersDAO {
         return users;
     }
 
-    @Override
-    public User createUser(User user) throws SQLException {
-        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/create_user.sql");
+    public User create(User user) throws SQLException {
+        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/create_user.sql");
         Connection conn = JDBCUtils.dbConnect();
         User matchUser = new User();
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, user.getFirstName());
-            stmt.setString(2, user.getLastName());
-            stmt.setString(3, user.getEmail());
-            stmt.setString(4, user.getPassword());
+            stmt.setString(1, user.firstName);
+            stmt.setString(2, user.lastName);
+            stmt.setString(3, user.email);
+            stmt.setString(4, user.password);
             stmt.setBoolean(5, user.getActive());
             stmt.setBoolean(6, user.getVerified());
             stmt.execute();
@@ -98,10 +96,10 @@ public class UserServices implements UsersDAO {
             stmt.getGeneratedKeys();
             while (rs.next()) {
                 matchUser.setId(rs.getInt("id"));
-                matchUser.setFirstName(rs.getString("first_name"));
-                matchUser.setLastName(rs.getString("last_name"));
-                matchUser.setEmail(rs.getString("email"));
-                matchUser.setPassword(rs.getString("password"));
+                matchUser.firstName = rs.getString("first_name");
+                matchUser.lastName = rs.getString("last_name");
+                matchUser.email = rs.getString("email");
+                matchUser.password = rs.getString("password");
                 matchUser.setActive(rs.getBoolean("active"));
                 matchUser.setVerified(rs.getBoolean("verified"));
             };
@@ -124,9 +122,9 @@ public class UserServices implements UsersDAO {
         return matchUser;
     };
 
-    @Override
+
     public User getUser(int userID) throws DAOsException {
-        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
+        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
         try {
             Connection conn = JDBCUtils.dbConnect();
             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -157,14 +155,14 @@ public class UserServices implements UsersDAO {
         return users
                .stream()
                .filter((user) -> user
-                                         .getFirstName()
+                                         .firstName
                                          .equals(firstName))
                .findFirst()
                .orElse(null);
     }
 
     public User getUserByID(int userID) {
-        String sql = FileUtil.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
+        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
         try {
             Connection conn = JDBCUtils.dbConnect();
             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);

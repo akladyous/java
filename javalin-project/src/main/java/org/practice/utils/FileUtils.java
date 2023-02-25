@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileUtil {
+public class FileUtils {
 
   public static String parseSQLFile(String fileName) {
 

@@ -6,10 +6,10 @@ import java.util.Objects;
 
 public class User extends UserServices {
     private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+    public String firstName;
+    public String lastName;
+    public String email;
+    public String password;
     private Boolean active = true;
     private Boolean verified = false;
 
@@ -29,40 +29,22 @@ public class User extends UserServices {
         this.password = password;
     }
 
+    public static User createUser(User user){ return null; };
+    public static User getUser(User user){ return null; };
+    public static User updateUser(User user){ return null; };
+    public static User deleteUser(User user){ return null; };
+
+
     public Integer getId() {
         return id;
-    }
-    public String getFirstName() {
-        return firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public String getPassword() {
-        return password;
     }
     public Boolean getActive() {
         return active;
     }
     public Boolean getVerified() {return verified;}
-    // setters
+
     public void setId(Integer id) {
         this.id = id;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public void setPassword(String password) {
-        this.password = password;
     }
     public void setActive(Boolean active) {
         this.active = active;

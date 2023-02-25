@@ -9,8 +9,6 @@ public class JDBCUtils {
 //  private static final String url = "jdbc:postgresql://localhost/practice";
   private static final String url = "jdbc:mysql://localhost:3306/practice";
   private static Connection connection = null;
-  public static void main(String[] args) {
-  }
 
   public static Connection dbConnect() throws SQLException  {
     Properties props = new Properties();
@@ -18,6 +16,7 @@ public class JDBCUtils {
     String password = System.getenv("SQL_PASSWORD");
     props.setProperty("userName", userName);
     props.setProperty("password", password);
+
     if (connection == null) {
       try {
         connection = DriverManager.getConnection(url, userName, password);
