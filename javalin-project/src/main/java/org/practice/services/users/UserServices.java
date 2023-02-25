@@ -91,7 +91,7 @@ public class UserServices implements UsersDAO {
 
     // READ
     @Override
-    public User getUser(User user) {
+    public User getUser(int userID) {
         String sql = FileUtils.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
         try {
             Connection conn = JDBCUtils.dbConnect();

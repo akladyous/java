@@ -2,6 +2,7 @@ package org.practice.models;
 
 import org.practice.services.users.UserServices;
 
+import java.lang.reflect.Field;
 import java.util.Objects;
 
 public class User extends UserServices {
@@ -12,6 +13,17 @@ public class User extends UserServices {
     public String password;
     private Boolean active = true;
     private Boolean verified = false;
+
+
+    public static enum Attributes {
+        ID,
+        first_name,
+        last_name,
+        email,
+        password,
+        active,
+        verified
+    }
 
     public User() {};
 
@@ -29,6 +41,13 @@ public class User extends UserServices {
         this.password = password;
     }
 
+
+    public void getBy(String fieldName) throws NoSuchFieldException, IllegalAccessException {
+        Field field = this.getClass().getDeclaredField(fieldName);
+        System.out.println(field.get(this));
+    }
+
+    public void prova(Attributes attributre){};
 
     public Integer getId() {
         return id;

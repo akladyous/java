@@ -8,19 +8,9 @@ import java.util.List;
 
 public interface UsersDAO {
 
-    enum Attributes {
-        ID,
-        first_name,
-        last_name,
-        email,
-        password,
-        active,
-        verified
-    }
-
     List<User> getAllUsers();
     User createUser(User user) ;
-    User getUser(User user) ;
+    User getUser(int userID) ;
     User updateUser(User user) ;
     Boolean deleteUser(User userID) ;
 
