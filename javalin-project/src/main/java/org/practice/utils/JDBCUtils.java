@@ -10,7 +10,7 @@ public class JDBCUtils {
   private static final String url = "jdbc:mysql://localhost:3306/practice";
   private static Connection connection = null;
 
-  public static Connection dbConnect() throws SQLException  {
+  public static Connection dbConnect()   {
     Properties props = new Properties();
     String userName = System.getenv("SQL_USER");
     String password = System.getenv("SQL_PASSWORD");

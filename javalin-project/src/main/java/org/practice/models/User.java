@@ -29,11 +29,6 @@ public class User extends UserServices {
         this.password = password;
     }
 
-    public static User createUser(User user){ return null; };
-    public static User getUser(User user){ return null; };
-    public static User updateUser(User user){ return null; };
-    public static User deleteUser(User user){ return null; };
-
 
     public Integer getId() {
         return id;

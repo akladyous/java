@@ -18,16 +18,11 @@ public interface UsersDAO {
         verified
     }
 
-//    List<User> getAllUsers();
-//    User createUser(User user);
-//    User getUser(int userID) throws DAOsException;
-
-    User update(User user) throws DAOsException;
-    Boolean delete(int id) throws DAOsException;
-    User save();
-    // void validate();
-
-
+    List<User> getAllUsers();
+    User createUser(User user) ;
+    User getUser(User user) ;
+    User updateUser(User user) ;
+    Boolean deleteUser(User userID) ;
 
     /*
     destroy
