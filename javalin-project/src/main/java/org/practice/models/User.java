@@ -41,14 +41,6 @@ public class User extends UserServices {
         this.password = password;
     }
 
-
-    public void getBy(String fieldName) throws NoSuchFieldException, IllegalAccessException {
-        Field field = this.getClass().getDeclaredField(fieldName);
-        System.out.println(field.get(this));
-    }
-
-    public void prova(Attributes attributre){};
-
     public Integer getId() {
         return id;
     }

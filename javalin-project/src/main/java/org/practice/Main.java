@@ -19,18 +19,16 @@ public class Main {
 //
         User userDAO = new User("john", "doe", "john@gmail.com", "000000");
 
-        userDAO.getBy("firstName");
 
-        User john = userDAO.createUser(userDAO);
-        System.out.println(john);
+//        User john = userDAO.createUser(userDAO);
+//        System.out.println(john);
+//
+//        ArrayList<User> users = (ArrayList<User>) userDAO.getAllUsers();
+//        System.out.println(users);
+//
+//        User u1 = userDAO.getUserByID(1);
+//        System.out.println("user by id : " + u1);
 
-        ArrayList<User> users = (ArrayList<User>) userDAO.getAllUsers();
-        System.out.println(users);
-
-        User u1 = userDAO.getUserByID(1);
-        System.out.println("user by id : " + u1);
-//    System.out.println(user1.getClass().getSimpleName());
-//    System.out.println(user1.getClass().getEnclosingMethod().getName());
 
 //
 //

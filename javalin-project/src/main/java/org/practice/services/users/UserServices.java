@@ -18,7 +18,12 @@ public class UserServices implements UsersDAO {
         super();
     }
 
+    private static void all(){
+        System.out.println("");
+    }
+
     public List<User> getAllUsers() {
+
         String sql = "SELECT * FROM users;";
         try {
             Connection conn = JDBCUtils.dbConnect();
