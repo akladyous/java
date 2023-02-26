@@ -49,8 +49,10 @@ public class ArrayDemo {
 				System.out.println("-".repeat(40));
         String[] arrStr2 = {"one", "two", "three", };
         String[] arrStr3 = {"four", "five", "six"};
-				ArrayList<String> arrStr4 = new ArrayList<>();
-
+        ArrayList<String> arrStr4 = new ArrayList<>();
+        int as = arrStr2.length;
+        String s1 = " 1";
+        s1.length();
         arrStr4.addAll(Arrays.asList(arrStr2));
         arrStr4.addAll(new ArrayList<>(List.of(arrStr3)));
         System.out.println("arrStr4 : " + arrStr4);

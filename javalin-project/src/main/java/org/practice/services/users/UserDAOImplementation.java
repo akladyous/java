@@ -49,7 +49,6 @@ public class UserDAOImplementation implements UsersDAO {
     public User createUser(User user)  {
         String sql = FileUtils.parseSQLFile("src/main/script/sql/users/create_user.sql");
         Connection conn = JDBCUtils.dbConnect();
-        User matchUser = new User();
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -61,15 +60,10 @@ public class UserDAOImplementation implements UsersDAO {
             stmt.setBoolean(6, user.getVerified());
             stmt.execute();
             ResultSet rs = stmt.getGeneratedKeys();
-            stmt.getGeneratedKeys();
-            while (rs.next()) {
-                matchUser.setId(rs.getInt("id"));
-                matchUser.firstName = rs.getString("first_name");
-                matchUser.lastName = rs.getString("last_name");
-                matchUser.email = rs.getString("email");
-                matchUser.password = rs.getString("password");
-                matchUser.setActive(rs.getBoolean("active"));
-                matchUser.setVerified(rs.getBoolean("verified"));
+            if (rs.next()) {
+                user.setId(Integer.valueOf(rs.getString(1)));
+            } else {
+                return null;
             };
         } catch (SQLIntegrityConstraintViolationException ce) {
             System.out.println("SQL Integrity Constraint Violation Exception");
@@ -87,7 +81,7 @@ public class UserDAOImplementation implements UsersDAO {
                 System.out.println(e.getMessage());
             }
         }
-        return matchUser;
+        return user;
     };
 
     // READ
