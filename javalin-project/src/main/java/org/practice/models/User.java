@@ -1,11 +1,10 @@
 package org.practice.models;
 
-import org.practice.services.users.UserServices;
+import org.practice.services.users.UserDAOImplementation;
 
-import java.lang.reflect.Field;
 import java.util.Objects;
 
-public class User extends UserServices {
+public class User extends UserDAOImplementation {
     private Integer id;
     public String firstName;
     public String lastName;
