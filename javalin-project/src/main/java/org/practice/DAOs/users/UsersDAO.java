@@ -12,7 +12,7 @@ public interface UsersDAO {
     User createUser(User user) ;
     User getUser(int userID) ;
     User updateUser(User user) ;
-    Boolean deleteUser(User userID) ;
+    Boolean deleteUser(int userID) ;
 
     /*
     destroy
