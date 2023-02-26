@@ -8,6 +8,8 @@ import org.practice.utils.JDBCUtils;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class UserDAOImplementation implements UsersDAO {
 
@@ -18,7 +20,6 @@ public class UserDAOImplementation implements UsersDAO {
     }
 
     public List<User> getAllUsers() {
-
         String sql = "SELECT * FROM users;";
         try {
             Connection conn = JDBCUtils.dbConnect();
@@ -93,11 +94,18 @@ public class UserDAOImplementation implements UsersDAO {
     @Override
     public User getUser(int userID) {
         String sql = FileUtils.parseSQLFile("src/main/script/sql/users/get_user_by_id.sql");
+        Connection conn = null;
         try {
-            Connection conn = JDBCUtils.dbConnect();
-            PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            conn = JDBCUtils.dbConnect();
+            PreparedStatement ps = conn.prepareStatement(
+                    sql,
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY
+            );
             ps.setInt(1, userID);
-            ResultSet rs = ps.executeQuery();
+            if ( ! ps.execute() ) return null;
+            ResultSet rs = ps.getResultSet();
+            rs.first();
             User matchUser = new User(
                     rs.getInt("id"),
                     rs.getString("first_name"),
@@ -107,20 +115,21 @@ public class UserDAOImplementation implements UsersDAO {
             );
             matchUser.setActive(rs.getBoolean("active"));
             matchUser.setVerified(rs.getBoolean("verified"));
-
             return matchUser;
         } catch (SQLException e) {
             System.out.println("SQL Error : " + e.getMessage());
             return null;
         }
-    }
+    };
 
     // UPDATE
     @Override
     public User updateUser(User user)  {
-        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/create_user.sql");
+        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/update_user.sql");
+        Connection conn = null;
         try {
-            Connection conn = JDBCUtils.dbConnect();
+            conn = JDBCUtils.dbConnect();
+            conn.setAutoCommit(false);
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, user.firstName);
             ps.setString(2, user.lastName);
@@ -128,24 +137,52 @@ public class UserDAOImplementation implements UsersDAO {
             ps.setString(4, user.password);
             ps.setBoolean(5, user.getActive());
             ps.setBoolean(6, user.getVerified());
-            ps.execute();
-
-            ResultSet rs = ps.getGeneratedKeys();
-            user.setId(rs.getInt(1));
-
+            ps.setInt(7, user.getId());
+            ps.executeUpdate();
+            conn.commit();
+//            ResultSet rs = ps.getGeneratedKeys();
         } catch (SQLException e) {
-            System.out.println("SQL Error : " + e.getMessage());
+            JDBCUtils.printSQLException(e);
+            if ( conn != null ) {
+                try {
+                    System.out.println("Transaction is being rolled back");
+                    conn.rollback();
+                    conn.close();
+                } catch (SQLException sqlException) {
+                    JDBCUtils.printSQLException(sqlException);
+                }
+            }
             return null;
         }
         return user;
-    }
-
+    };
 
     // DELETE
     @Override
-    public Boolean deleteUser(User userID) {
-        return null;
-    }
+    public Boolean deleteUser(int userID) {
+        User user = getUser(userID);
+        if ( user == null ) return null;
+        String sql = FileUtils.parseSQLFile("src/main/script/sql/users/update_user.sql");
+        Connection conn = null;
+        try {
+            conn = JDBCUtils.dbConnect();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, userID);
+            if ( ! ps.execute() ) return false;
+        } catch (SQLException e) {
+            JDBCUtils.printSQLException(e);
+            if ( conn != null ) {
+                try {
+                    System.out.println("Transaction is being rolled back");
+                    conn.close();
+                } catch (SQLException sqlException) {
+                    JDBCUtils.printSQLException(sqlException);
+                }
+            }
+            return null;
+        };
+        return true;
+    };
 
 
     // Extra Methods
@@ -154,7 +191,9 @@ public class UserDAOImplementation implements UsersDAO {
                .stream()
                .filter((user) -> user
                                          .firstName
-                                         .equals(firstName))
+                                         .equals(firstName)
+
+               )
                .findFirst()
                .orElse(null);
     }

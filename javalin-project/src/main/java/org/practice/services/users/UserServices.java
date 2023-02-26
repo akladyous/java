@@ -21,8 +21,8 @@ public class UserServices {
         return this.userDAO.createUser(user);
     }
 
-    public User getUser(User user) {
-        return this.getUser(user);
+    public User getUser(int userID) {
+        return this.userDAO.getUser(userID);
     }
 
     public User updateUser(User user) {

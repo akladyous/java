@@ -4,7 +4,7 @@ import org.practice.services.users.UserDAOImplementation;
 
 import java.util.Objects;
 
-public class User extends UserDAOImplementation {
+public class User {
     private Integer id;
     public String firstName;
     public String lastName;
@@ -100,5 +100,10 @@ public class User extends UserDAOImplementation {
         result = 31 * result + (active != null ? active.hashCode() : 0);
         result = 31 * result + (verified != null ? verified.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
