@@ -21,7 +21,11 @@ public class Main {
         System.out.println("uuid : " + uuid);
 //        UsersTable.info();
 
-        create();
+//        all();
+//        create();
+//        get(4);
+//        update(3);
+//        delete(7);
 
 //
 //
@@ -45,26 +49,32 @@ public class Main {
         System.out.println("John instance : " + user);
         System.out.println("-".repeat(40));
     }
-    public static void get(){
+    public static void get(int id){
         System.out.println("get user");
-        User u1 = userService.getUser(1);
+        User u1 = userService.getUser(id);
         System.out.println("user by id : " + u1);
         System.out.println("-".repeat(40));
     }
-    public static void update(){
-        User user = userService.getUser(1);
-        System.out.println("update user");
+    public static void update(int id){
+        User user = userService.getUser(id);
+        if ( user == null ) {
+            System.out.println("user not found");
+            return;
+        }
+        System.out.println("updating user : ");
+        System.out.println(user);
+        System.out.println("with : ");
         user.firstName = "john";
         user.lastName = "travolta";
         user.email = "john_travolta@gmail.com";
         User john = userService.updateUser(user);
         System.out.println("update user : \n");
-        System.out.println(user);
+        System.out.println(john);
         System.out.println("-".repeat(40));
     }
-    public static void delete(){
+    public static void delete(int id){
         System.out.println("delete user\n");
-        Boolean isDelete = userService.deleteUser(2);
+        Boolean isDelete = userService.deleteUser(id);
         if (isDelete) {
             System.out.println("user deleted successfully");
         } else {

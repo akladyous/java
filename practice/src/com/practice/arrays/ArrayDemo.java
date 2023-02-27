@@ -46,7 +46,7 @@ public class ArrayDemo {
         var newArray = arrNums1.toArray(new String[arrNums1.size()]);
         System.out.println("newArray : " + Arrays.toString(newArray));
 
-				System.out.println("-".repeat(40));
+        System.out.println("-".repeat(40));
         String[] arrStr2 = {"one", "two", "three", };
         String[] arrStr3 = {"four", "five", "six"};
         ArrayList<String> arrStr4 = new ArrayList<>();
