@@ -10,17 +10,18 @@ public class StringDemo {
 
   public static void main(String[] args) {
 
-    String str1 = new String("ciao paolo come stai");
-    System.out.println(str1.indexOf("paolo"));
-    System.out.println(str1.lastIndexOf("come"));
-
+    String instance = new String("ciao paolo come stai");
+    System.out.println("String.charAt : " + instance.charAt(5));
+    System.out.println("String instance.codePointAt " + instance.codePointAt(0));
+    System.out.println("String instance.codePointCount + " + instance.codePointCount(0, instance.length()));
+    System.out.println("String instance.indexOf + " + instance.indexOf("paolo"));
+    System.out.println("String instance.lastIndexOf + " + instance.lastIndexOf("come"));
+    System.out.println("String instance.replace : " + instance.replace("paolo", "PAOLO"));
+    System.out.println("String instance.replace : " + instance.replaceFirst(" ", "-"));
     System.out.println("-".repeat(40));
+
     String str2 = new String("hello");
     char[] ch1 = str2.toCharArray();
-    for (char ch : ch1) {
-      System.out.println("character : " + ch);
-    }
-
     System.out.println("toCharArray : " + new String(ch1));
     System.out.println("-".repeat(40));
     //
@@ -30,7 +31,6 @@ public class StringDemo {
     for (int num : ch2) {
       System.out.println("char : " + num);
     }
-
     System.out.println(String.valueOf(str3.chars().sum()));
     System.out.println("-".repeat(40));
 
@@ -38,11 +38,11 @@ public class StringDemo {
     String userName = charsToUpperCase("paolo");
     System.out.println("userName : " + userName);
 
-    Arrays.asList("Method Reference : " + str1, str2, str3).forEach(System.out::println);
+    Arrays.asList("Method Reference : " + instance, str2, str3).forEach(System.out::println);
 
     //
     String name = getName("paolo");
-    System.out.println(name);
+    System.out.println("getName : " + name);
     System.out.println("-".repeat(40));
 
 
