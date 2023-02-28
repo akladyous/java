@@ -61,11 +61,11 @@ public class ArraysClass {
         System.out.println("ArraysList -> toArray Method");
         ArrayList<String> numLetters = new ArrayList<>(Arrays.asList("one", "two","three", "four", "five"));
         var toArrayTest1 = numLetters.toArray(new String[numLetters.size()]);
-        System.out.println("with var  : " + Arrays.toString(toArrayTest1));
+        System.out.println("with var " + Arrays.toString(toArrayTest1));
         Object[] toArrayTest2 = numLetters.toArray();
-        System.out.println("with Object[]  : " + Arrays.toString(toArrayTest2));
-        Integer[] toArrayTest3 = numLetters.toArray(new Integer[numLetters.size()]);
-        System.out.println("with Type[] : " + Arrays.toString(toArrayTest3));
+        System.out.println("with Object[] " + Arrays.toString(toArrayTest2));
+        String[] toArrayTest3 = numLetters.toArray(new String[numLetters.size()]);
+        System.out.println("with Type[] " + Arrays.toString(toArrayTest3));
         System.out.println("-".repeat(40));
 
 
