@@ -5,7 +5,9 @@ import java.util.UUID;
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class SupplierTest {
+public class SupplierDemo {
+
+
     public static void main(String[] args) {
         Supplier<Long> randomId = () -> new Random().nextLong();
         Supplier<UUID> uuid = () -> UUID.randomUUID();
