@@ -11,21 +11,29 @@ import java.util.stream.IntStream;
 public class FunctionDemo {
 
     public static void main(String[] args) {
-        ArrayList<Integer> ar1 = new ArrayList<>(List.of(1,2,3,4));
-        ar1.stream().filter(n -> n > 5).collect(Collectors.toList());
-//        System.out.println(incrementByOne.apply( 1));
-        ar1.forEach(consumer);
-
-
         int test1 = incrementByOne.apply(1);
         System.out.println("Function.apply : " + test1);
-        incrementByOne.andThen()
+//        System.out.println(itoUpperHex.apply(2310));
 
+        intToHex.andThen(x -> x.toUpperCase());
+        intToHex.andThen(String::toUpperCase);
+        intToHex.compose(x -> Integer.valueOf(x.toString()));
+
+        String result = intToHex.andThen(toUpperCase).apply(6071974);
+        System.out.println("result  : " + result);
     }
-    static Consumer<Integer> consumer = e -> System.out.println(e);
     static Function<Integer, Integer> incrementByOne = n -> n+1;
 
+    static Function<Integer, String> intToHex = i -> Integer.toHexString(i);
+    static Function<String, String> toUpperCase = String::toUpperCase;;
 
+
+
+//    static Function<Integer,String> itoUpperHex;
+//    static {
+//        Function<String, String> toUpperCase = String::toUpperCase;
+//        itoUpperHex = toUpperCase.compose(intToHex);
+//    }
 
 
 }
