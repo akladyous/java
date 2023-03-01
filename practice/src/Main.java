@@ -1,5 +1,8 @@
+import com.practice.functional.FunctionDemo;
 import com.practice.generics.AddTwoNums;
 
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +25,16 @@ public class Main {
 		System.out.println(Arrays.toString(seats.toArray()));
 
 
-
+	  Method[] methods = FunctionDemo.class.getMethods();
+	  for (Method method : methods) {
+//            method.getModifiers()
+		  Modifier.classModifiers();
+		  System.out.println(
+				  "Method ( " +
+						  method.getName() +
+						  " ) Modifier: " +
+						  Modifier.toString(method.getModifiers())
+		  );
+	  }
   }
 }
