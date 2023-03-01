@@ -19,9 +19,7 @@ public class FunctionDemo {
 
         System.out.println(randomID.get());
         String uid = String.valueOf(uuid.get());
-        System.out.println(isPositive.test(1));
     }
-    static Predicate<Integer> isPositive = number -> number > 0;
 
     static Function<Integer, Integer> incrementByOne = n -> n+1;
     static Consumer<Integer> consumer = e -> System.out.println(e);
