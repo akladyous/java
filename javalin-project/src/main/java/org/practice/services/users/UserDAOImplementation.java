@@ -55,7 +55,7 @@ public class UserDAOImplementation implements UsersDAO {
             ps.setString(4, user.password);
             ps.setBoolean(5, user.getActive());
             ps.setBoolean(6, user.getVerified());
-            ps.execute();
+            ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 user.setId(Integer.valueOf(rs.getString(1)));
