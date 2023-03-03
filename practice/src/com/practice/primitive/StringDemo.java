@@ -7,8 +7,8 @@ public class StringDemo {
   String prova = new String("ciao");
   static int valueX;
 
-  static  { System.out.println("static block");     }
-          { System.out.println("non-static block"); }
+  static { System.out.println("static block, get called once, when the class itself is initialized");     }
+         { System.out.println("non-static block, get called every time an instance of the class is constructed"); }
 
 
   // overload methods
