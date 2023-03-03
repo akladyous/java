@@ -1,6 +1,6 @@
 package com.practice.primitive;
 
-public class PrimitiveBoolean {
+public class BooleanDemo {
   public static void main(String[] args) {
     String boolStr = "true";
     String boolTrue = "true";

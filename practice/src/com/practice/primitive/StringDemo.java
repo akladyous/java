@@ -2,24 +2,14 @@ package com.practice.primitive;
 
 import java.util.Arrays;
 
-public class WithString {
+public class StringDemo {
   String newLine = System.getProperty("line.separator");
   String prova = new String("ciao");
   static int valueX;
-  {
-    valueX = 10;
 
-    System.out.println("valueX : " + valueX);
-    System.out.println("this   : " + this);
-  }
+  static  { System.out.println("static block");     }
+          { System.out.println("non-static block"); }
 
-  static void method() {
-    System.out.println("method");
-  }
-
-  static {
-    System.out.println(valueX);
-  }
 
   // overload methods
   public static void main(String[] args) {
