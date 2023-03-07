@@ -19,9 +19,10 @@ public class StringMaipulation {
         char b = 'b';
         System.out.println("char 'b' - 'b' : " + (b-a)); //'a' 97 'b' 98
         System.out.println("Integer.toString(8, 2) : " + Integer.toString(8, 2)); // 10
-
-        char[] hello = s1.toCharArray();
-
+        //
+        String s3 = "hello";
+        char[] hello = s3.toCharArray();
+        //
         String hey = "ABCabc";
         byte[] heyBytes = hey.getBytes(); // [65,66,67,97,98,99]
         System.out.println("heyBytes : " + heyBytes.toString());
