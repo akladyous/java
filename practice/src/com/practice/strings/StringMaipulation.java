@@ -24,7 +24,6 @@ public class StringMaipulation {
 
         String hey = "ABCabc";
         byte[] heyBytes = hey.getBytes(); // [65,66,67,97,98,99]
-
         System.out.println("heyBytes : " + heyBytes.toString());
 
         System.out.println(removeCharFromString("banana", "a"));
