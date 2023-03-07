@@ -5,12 +5,15 @@ package com.practice.primitive;
 public class CharacterDemo {
     public static void main(String[] args) {
         char c1 = 'a';
-        System.out.println(Character.isLetter(23));
-        System.out.println(Character.isAlphabetic(23));
-        System.out.println(Character.isLowerCase(23));
-        System.out.println(Character.isUpperCase(23));
-        System.out.println(Character.isTitleCase(23));
-        System.out.println(Character.isDigit(23));
+        System.out.println("isLetter        : " +  Character.isLetter(c1));
+        System.out.println("isAlphabetic    : " +  Character.isAlphabetic(c1));
+        System.out.println("isLowerCase     : " +  Character.isLowerCase(c1));
+        System.out.println("isUpperCase     : " +  Character.isUpperCase(c1));
+        System.out.println("isTitleCase     : " +  Character.isTitleCase(c1));
+        System.out.println("isDigit         : " +  Character.isDigit(c1));
+        System.out.println("isLetterOrDigit : " +  Character.isLetterOrDigit(c1));
+        System.out.println("getType         : " +  Character.getType(c1));
+
 
         String hey = "ABCabc";
         byte[] heyBytes = hey.getBytes(); // [65,66,67,97,98,99]
