@@ -3,6 +3,9 @@ package com.practice.primitive;
 import java.util.Arrays;
 
 public class StringDemo {
+  String id;
+  String name;
+
   String newLine = System.getProperty("line.separator");
   String prova = new String("ciao");
   static int valueX;
@@ -21,4 +24,13 @@ public class StringDemo {
 
   };
 
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return super.equals(obj);
+  }
 }
