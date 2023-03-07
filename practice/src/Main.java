@@ -12,8 +12,8 @@ public class Main {
 
   public static void main(String[] args) {
 
-		List<String> seats = SeatListGenerator.generateSeatList(6, 3, 'A');
-		System.out.println(Arrays.toString(seats.toArray()));
+		//List<String> seats = SeatListGenerator.generateSeatList(6, 3, 'A');
+		//System.out.println(Arrays.toString(seats.toArray()));
 
 
 
