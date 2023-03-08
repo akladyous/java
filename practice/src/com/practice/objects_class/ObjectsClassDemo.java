@@ -19,25 +19,5 @@ public class ObjectsClassDemo {
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ObjectsClassDemo that = (ObjectsClassDemo) o;
-
-        if (! Objects.equals(this.id, that.id)) return false;
-        if (! Objects.deepEquals(this.nums, that.nums)) return false;
-        return str.equals(that.str);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + str.hashCode();
-        return result;
-    }
-
 
 }

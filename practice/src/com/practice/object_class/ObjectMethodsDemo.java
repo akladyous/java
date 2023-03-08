@@ -18,6 +18,7 @@ public class ObjectMethodsDemo {
         ObjectMethodsDemo obj2 = new ObjectMethodsDemo(1, "a", new int[]{1,2,3});
 
         obj1.equals(obj2);
+        int result = HashCode
     }
 
     @Override
@@ -25,8 +26,10 @@ public class ObjectMethodsDemo {
         if (this == obj) return true;
         if (obj == null || this.getClass() != obj.getClass()) return false;
         ObjectMethodsDemo that = (ObjectMethodsDemo) obj;
+        this.get
         if (!Objects.equals(this.id, that.id)) return false;
         if (! Objects.deepEquals(this.nums, that.nums)) return false;
         return (! Objects.equals(this.str, that.str));
     }
+
 }
