@@ -15,6 +15,15 @@ public class Main {
 		//List<String> seats = SeatListGenerator.generateSeatList(6, 3, 'A');
 		//System.out.println(Arrays.toString(seats.toArray()));
 
+    int[] stack = new int[2];
+    stack[0] = 0;
+    stack[1] = 1;
+    System.out.println(Arrays.toString(stack));
+    System.out.println();
+    stack = new int[stack.length + 5];
+//    stack[0]=0;
+//    stack[0]=1;
+    System.out.println(Arrays.toString(stack));
 
     System.out.println("multiply by 2");
     for (int i=1; i <=10 ; i++) {
