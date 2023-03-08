@@ -12,10 +12,7 @@ public class ResizableArray {
         a[4] = 5;
         for (int i=0; i<a.length; i++)
             System.out.println(a[i]);
-
-
-
-    }
+    };
 
     private static Object resizeArray (Object oldArray, int newSize) {
         int oldSize = java.lang.reflect.Array.getLength(oldArray);
@@ -25,5 +22,5 @@ public class ResizableArray {
         if (preserveLength > 0)
             System.arraycopy(oldArray, 0, newArray, 0, preserveLength);
         return newArray;
-    }
-}
+    };
+};
