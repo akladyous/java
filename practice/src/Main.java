@@ -19,7 +19,7 @@ public class Main {
     stack[0] = 0;
     stack[1] = 1;
     System.out.println(Arrays.toString(stack));
-    System.out.println();
+    System.out.println("hashCode : " + stack.hashCode());
     stack = new int[stack.length + 5];
 //    stack[0]=0;
 //    stack[0]=1;
