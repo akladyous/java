@@ -24,6 +24,7 @@ public class Main {
 //    stack[0]=0;
 //    stack[0]=1;
     System.out.println(Arrays.toString(stack));
+    System.out.println("hashCode : " + stack.hashCode());
 
     System.out.println("multiply by 2");
     for (int i=1; i <=10 ; i++) {
