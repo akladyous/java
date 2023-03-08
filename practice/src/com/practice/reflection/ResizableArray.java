@@ -2,14 +2,18 @@ package com.practice.reflection;
 
 import com.practice.arrays.Array;
 
+import java.util.Objects;
+
 public class ResizableArray {
     public static void main(String[] args) {
         int[] a = {1, 2, 3};
-        a = (int[])resizeArray(a, 5);
+        a = (int[]) resizeArray(a, 5);
         a[3] = 4;
         a[4] = 5;
         for (int i=0; i<a.length; i++)
             System.out.println(a[i]);
+
+
 
     }
 
