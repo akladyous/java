@@ -10,6 +10,11 @@ import java.util.List;
 public class Main {
 
 
+  @Override
+  protected void finalize() throws Throwable {
+    super.finalize();
+  }
+
   public static void main(String[] args) {
 
 		//List<String> seats = SeatListGenerator.generateSeatList(6, 3, 'A');
