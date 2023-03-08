@@ -17,6 +17,7 @@ public class Main {
     stack[0] = 0;
     stack[1] = 1;
 
+
     System.out.println(Arrays.toString(stack));
     System.out.println("hashCode : " + stack.hashCode());
     stack = new int[stack.length + 5];
@@ -26,17 +27,7 @@ public class Main {
     System.out.println("hashCode : " + stack.hashCode());
 
 
-    System.out.println("multiply by 2");
-    for (int i=1; i <=10 ; i++) {
-      int multiply = i << 1;
-      System.out.format("%d << %-4d", i, multiply);
-    }
-    System.out.println();
-    System.out.println("divide bt 2");
-    for (int i=1; i <=10 ; i++) {
-      int divide = i >> 1;
-      System.out.format("%d << %-4d", i, divide);
-    }
+
 
   }
 
