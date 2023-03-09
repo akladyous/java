@@ -1,16 +1,14 @@
 package com.practice.utilities;
 
+import java.text.NumberFormat;
+
 public class Helpers {
-    public static int add(int valueA, int valueB) {
-        return valueA + valueB;
+    public static void main(String[] args) {
+        currencyPrinter(234.11339);
     }
-    public static int subtract(int valueA, int valueB) {
-        return valueA - valueB;
-    }
-    public static int multiply(int valueA, int valueB) {
-        return valueA * valueB;
-    }
-    public static float divide(int valueA, int valueB) {
-        return valueA / valueB;
+
+    public static void currencyPrinter(double number) {
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        System.out.println(nf.format(number));
     }
 }

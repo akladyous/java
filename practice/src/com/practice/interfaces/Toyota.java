@@ -39,6 +39,7 @@ public class Toyota implements Vehicle {
 		return super.toString();
 	}
 
+
 	public void gps(Vehicle vehicle) {
 		Vehicle obj1 = (Vehicle) vehicle;
 
