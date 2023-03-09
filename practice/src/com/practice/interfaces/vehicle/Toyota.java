@@ -1,26 +1,21 @@
-package com.practice.interfaces;
-
-import com.practice.enumeration.ToyotaModels;
+package com.practice.interfaces.vehicle;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Toyota implements Vehicle, Comparable<Toyota> {
 	public String model;
 	public String color;
 	public Integer year;
 	public ArrayList<String> features;
+	private static List<Toyota> cars = new ArrayList<>();
 
 
 	public Toyota(String model, String color, Integer year) {
 		this.model = model;
 		this.color = color;
 		this.year = year;
-	}
-
-	public static void main(String[] args) {
-		Vehicle.info();
-		Toyota camry = new Toyota("camry", "white", 2023);
-		camry.printDescription();
+		cars.add(this);
 	}
 
 	@Override
@@ -31,7 +26,6 @@ public class Toyota implements Vehicle, Comparable<Toyota> {
 	@Override
 	public void printDescription() {
 		Vehicle.super.printDescription();
-
 	}
 
 	@Override
@@ -43,5 +37,14 @@ public class Toyota implements Vehicle, Comparable<Toyota> {
 	public void gps(Vehicle vehicle) {
 		Vehicle obj1 = (Vehicle) vehicle;
 
+	}
+
+	@Override
+	public int compareTo(Toyota toyota) {
+		if (this.year > toyota.year) {
+			return 1;
+		} else if (this.year < toyota.year) {
+			return -1;
+		} else return 0;
 	}
 }
