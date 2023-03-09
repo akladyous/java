@@ -4,7 +4,7 @@ import com.practice.enumeration.ToyotaModels;
 
 import java.util.ArrayList;
 
-public class Toyota implements Vehicle {
+public class Toyota implements Vehicle, Comparable<Toyota> {
 	public String model;
 	public String color;
 	public Integer year;
