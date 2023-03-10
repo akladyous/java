@@ -1,6 +1,8 @@
 package com.practice.interfaces.vehicle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Toyota implements Vehicle, Comparable<Toyota> {
@@ -18,6 +20,12 @@ public class Toyota implements Vehicle, Comparable<Toyota> {
 		cars.add(this);
 	}
 
+	public static void printAllCars() {
+		Collections.sort(cars);
+		System.out.println(cars.toString());
+
+	}
+
 	@Override
 	public void addFeatures(String feature) {
 		features.add(feature);
@@ -30,9 +38,13 @@ public class Toyota implements Vehicle, Comparable<Toyota> {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return "Toyota{" +
+					   "model='" + model + '\'' +
+					   ", color='" + color + '\'' +
+					   ", year=" + year +
+					   ", features=" + features +
+					   '}';
 	}
-
 
 	public void gps(Vehicle vehicle) {
 		Vehicle obj1 = (Vehicle) vehicle;
@@ -47,4 +59,5 @@ public class Toyota implements Vehicle, Comparable<Toyota> {
 			return -1;
 		} else return 0;
 	}
+
 }

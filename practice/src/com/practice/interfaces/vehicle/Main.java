@@ -12,8 +12,12 @@ public class Main {
         //
         Toyota corolla = new Toyota(ToyotaModels.COROLLA.name(), "red", 2018);
         Toyota camry = new Toyota(ToyotaModels.CAMRY.name(), "black", 2020);
+        Toyota avalon = new Toyota(ToyotaModels.AVALON.name(), "black", 2019);
+        Toyota belta = new Toyota(ToyotaModels.BELTA.name(), "black", 2022);
         //
-        Vehicle.info();
 
+        // Vehicle.info();
+
+        Toyota.printAllCars();
     }
 }

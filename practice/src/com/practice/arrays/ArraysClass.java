@@ -79,10 +79,19 @@ public class ArraysClass {
         Collections.shuffle(ListLetters);
         System.out.println("-".repeat(40));
 
-        System.out.println("Arrays.deepEquals");
         String[] arrStr1 = {"a","b","c","d","e","f","g","h"};
         String[] arrStr2 = {"a","b","c","d","e","f","g","h"};
         ArrayList<String> arrStr4 = new ArrayList<>(List.of(arrStr1));
+
+        System.out.println("Array of Strings (1) " + Arrays.toString(arrStr1));
+        System.out.println("Array of Strings (2) " + Arrays.toString(arrStr2));
+        System.out.println("compares two Object arrays, within comparable elements, lexicographically.");
+        int arraysCompareResult = Arrays.compare(arrStr1, arrStr2);
+        System.out.printf("Arrays.compare (Integer) %-10s" ,  arraysCompareResult);
+
+        Boolean arraysDeepEqualsResult = Arrays.deepEquals(arrStr1, arrStr2);
+        System.out.printf("\n", "Arrays.deepEquals (Boolean) %-10s ", arraysDeepEqualsResult);
+
         boolean deepEquals1 = Arrays.deepEquals(
                         new List[] {Arrays.asList(arrStr1)},
                         new List[] {List.of(arrStr1)}
