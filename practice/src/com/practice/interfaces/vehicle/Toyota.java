@@ -46,9 +46,12 @@ public class Toyota implements Vehicle, Comparable<Toyota> {
 					   '}';
 	}
 
-	public void gps(Vehicle vehicle) {
+	private void gps(Vehicle vehicle) {
 		Vehicle obj1 = (Vehicle) vehicle;
 
+	}
+	void prova(){
+		//
 	}
 
 	@Override
