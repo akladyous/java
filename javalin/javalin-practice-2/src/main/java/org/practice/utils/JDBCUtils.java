@@ -6,8 +6,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class JDBCUtils {
-//  private static final String url = "jdbc:postgresql://localhost/practice";
-  private static final String url = "jdbc:mysql://localhost:3306/practice";
+  private static final String url = "jdbc:postgresql://localhost/practice";
   private static Connection connection = null;
 
   public static Connection dbConnect()   {

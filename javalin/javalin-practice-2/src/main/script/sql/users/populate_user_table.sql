@@ -1,14 +1,3 @@
-
-DROP TABLE IF EXISTS user;
-CREATE TABLE users (
-    ID SERIAL PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    email VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(64) NOT NULL CHECK (CHAR_LENGTH(password) BETWEEN 6 AND 64),
-    active BOOLEAN DEFAULT true,
-    verified BOOLEAN DEFAULT false,
-    created_at TIMESTAMP DEFAULT current_timestamp
-);
 INSERT INTO users
 	(username, email, password, verified, created_at)
 	VALUES
@@ -112,4 +101,3 @@ INSERT INTO users
             (current_timestamp - (  trunc( random() * ( 365-1+1 ) + 1 )  || 'days')::interval) ),
         ( 'amacieja1d', 'rumpleby1d@hc360.com', '000000', RANDOM()::INT::BOOLEAN,
             (current_timestamp - (  trunc( random() * ( 365-1+1 ) + 1 )  || 'days')::interval) );
-SELECT * FROM users;

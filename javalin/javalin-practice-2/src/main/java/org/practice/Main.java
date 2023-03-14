@@ -15,12 +15,12 @@ public class Main {
     public static void main(String[] args) throws SQLException, NoSuchFieldException, IllegalAccessException {
 
 
-        InitializeDB.initializeTables();
-        String uuid = UUID.randomUUID().toString();
-        System.out.println("uuid : " + uuid);
+//        InitializeDB.initializeTables();
+//        String uuid = UUID.randomUUID().toString();
+//        System.out.println("uuid : " + uuid);
 //        UsersTable.info();
 
-//        all();
+        all();
 //        create();
 //        get(4);
 //        update(3);
