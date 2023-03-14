@@ -1,21 +1,20 @@
 package org.practice;
 
 import io.javalin.Javalin;
-import org.practice.DAOs.users.UsersDAO;
 import org.practice.models.User;
 import org.practice.services.users.UserServices;
-import org.practice.services.users.UsersTable;
 import org.practice.utils.InitializeDB;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.UUID;
 
 public class Main {
     private static UserServices userService = new UserServices();
 
     public static void main(String[] args) throws SQLException, NoSuchFieldException, IllegalAccessException {
+
+
         InitializeDB.initializeTables();
         String uuid = UUID.randomUUID().toString();
         System.out.println("uuid : " + uuid);
@@ -26,6 +25,9 @@ public class Main {
 //        get(4);
 //        update(3);
 //        delete(7);
+
+
+
 
 //
 //

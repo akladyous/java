@@ -5,10 +5,7 @@ import io.javalin.http.Context;
 import org.jetbrains.annotations.NotNull;
 import org.practice.models.User;
 
-import static io.javalin.apibuilder.EndpointGroup.*;
-import static io.javalin.apibuilder.ApiBuilder.*;
-
-public class UserController implements CrudHandler {
+public class UserCrud implements CrudHandler {
 
     @Override
     public void create(@NotNull Context context) {
