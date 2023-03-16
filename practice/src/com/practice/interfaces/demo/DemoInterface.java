@@ -8,6 +8,8 @@ public interface DemoInterface {
     public default void defaultMethod(){
         System.out.println("2- Default method");
         System.out.println("   default methods are methods that can have a body");
+
+        privateMethod();
     };
 
     public static void StaticMethod() {
