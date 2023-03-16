@@ -11,17 +11,15 @@ public interface Vehicle {
 
     public default void printDescription() {
         System.out.println("from default method");
-				baz();
     }
     //
-    private void baz() {
-        System.out.println("from private method");
+    public static void publicStatic() {
+        System.out.println("public static method");
     }
-    private static void prova(){};
-
-
-    public static void info() {
-        System.out.println("from static method");
-        System.out.println("called private method: baz");
+    private static void privateStaticMethod(){
+        System.out.println("private static method");
+    };
+    private void privateMethod() {
+        System.out.println("private method");
     }
 }
