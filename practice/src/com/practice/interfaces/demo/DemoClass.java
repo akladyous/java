@@ -18,6 +18,8 @@ public class DemoClass implements DemoInterface{
         demo.defaultMethod();
         DemoInterface.StaticMethod();
         System.out.println("-".repeat(50));
+        System.out.println("'Defining Private Methods in Interfaces'\nPrivate methods can be implemented static or non-static.");
+        System.out.println("This means that in an interface we are able to create private methods to encapsulate code from both default and static public method signatures");
 
     }
 }
