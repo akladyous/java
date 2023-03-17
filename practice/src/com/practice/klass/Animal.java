@@ -1,12 +1,17 @@
 package com.practice.klass;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Animal {
     String name;
     Integer age;
     private static Integer ids = 0;
+
+    static {
+        System.out.println("invoked static block");
+    }
+    {
+        System.out.println("invoked private block");
+    }
 
     public Animal(String name,  Integer age) {
         this.name = name;
@@ -17,19 +22,9 @@ public class Animal {
     public void info(){
         System.out.println("name : " + this.name + " age : " + this.age);
     }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+    public static void staticMethod(){
+        System.out.println("Class Static method");
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
