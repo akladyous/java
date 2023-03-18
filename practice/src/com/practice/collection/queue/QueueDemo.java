@@ -17,9 +17,7 @@ public class QueueDemo {
             System.out.println(c);
         }
 
-        line.iterator();
 
-
-//        System.out.println(line);
+        System.out.println(line);
     }
 }
