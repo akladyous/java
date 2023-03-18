@@ -1,7 +1,6 @@
 package com.practice.collection.deque.stack;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 
 public class StackDemo {
     public static void main(String[] args) {
