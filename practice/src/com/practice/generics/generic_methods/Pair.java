@@ -24,5 +24,24 @@ public class Pair <K, V>{
     public void setValue(V value) {
         this.value = value;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Pair{" +
+                       "key=" + key +
+                       ", value=" + value +
+                       '}';
+    }
+
+    public static void main(String[] args) {
+        Pair<String, Integer> dict1 = new Pair<>("apple", 3);
+        Pair<String, Integer> dict2 = new Pair<>("apple", 3);
+
+        System.out.println(dict1);
+
+        boolean sameObj = Util.compare(dict1,dict2);
+        System.out.println(sameObj);
+    }
+
 }
+
