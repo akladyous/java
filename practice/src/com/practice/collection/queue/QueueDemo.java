@@ -8,6 +8,7 @@ public class QueueDemo {
     public static void main(String[] args) {
 
         Queue<String> line = new LinkedList<>(List.of("a","b","c", "d", "e"));
+        System.out.println(line);
         line.add("b"); // insert element at the tail of queue. throw exception
         line.offer("a");
 
