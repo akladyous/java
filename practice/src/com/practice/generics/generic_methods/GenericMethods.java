@@ -1,4 +1,4 @@
-package com.practice.generics;
+package com.practice.generics.generic_methods;
 
 public class GenericMethods {
 
