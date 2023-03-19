@@ -1,4 +1,4 @@
-package com.practice.collection.deque.deque;
+package com.practice.collection.deque.stack;
 
 import java.util.*;
 
