@@ -1,10 +1,10 @@
-package com.practice.list;
+package com.practice.collection.list.ArraList;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class ListDemo {
+public class Planets {
 
     public static void main(String[] args) {
 
