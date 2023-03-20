@@ -1,6 +1,6 @@
 package com.practice.generics.bounded_type_parameters;
 
-public class Box <T extends Comparable<T>>{
+public class Box <T extends Comparable<T>>  {
     private T t;
 
     public void setT(T t) {
