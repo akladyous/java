@@ -5,6 +5,7 @@ import java.util.List;
 public class UpperBoundedWildcards {
 
 
+
     public static Integer sumListOfNums(List<? extends Number> nums) {
         int sum = 0;
         for (Number number : nums) {
@@ -12,6 +13,13 @@ public class UpperBoundedWildcards {
         }
         return sum;
     }
+
+
+    public static void printList(List<?> list) {
+        for (Object obj : list) {
+            System.out.println("object : " + obj);
+        }
+    };
 
 
 };
