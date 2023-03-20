@@ -1,4 +1,4 @@
-package com.practice.generics.unbounded_wildcard;
+package com.practice.generics.unbounded_wildcard.upperBounded;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,10 @@ import java.util.List;
 public class UpperBoundedWildcards {
 
     public static void main(String[] args) {
-
+        List<Integer> nums = List.of(1,2,3);
+        List<String> strings = List.of("a","b","c");
+        printList(nums);
+        printList(strings);
     }
 
     public static Integer sumListOfNums(List<? extends Number> nums) {
