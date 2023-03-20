@@ -8,5 +8,6 @@ public class MainGenerics {
 		numsInteger.print();
 		numsDouble.print();
 
+
 	}
 }

@@ -8,5 +8,14 @@ public class GenericMethods {
         }
     };
 
+    public static <T extends Comparable<T>> Integer countGreaterThan(T[] genericArray, T target) {
+        int count = 0;
+        for (T num : genericArray) {
+            if (num.compareTo(target) > 0) {
+                ++count;
+            }
+        }
+        return count;
+    }
 
 }
