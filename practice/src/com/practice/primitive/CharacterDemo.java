@@ -1,6 +1,8 @@
 
 package com.practice.primitive;
 
+import java.util.Arrays;
+
 // https://docs.oracle.com/javase/tutorial/i18n/text/characterClass.html
 public class CharacterDemo {
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class CharacterDemo {
         
         String hey = "ABCabc";
         byte[] heyBytes = hey.getBytes(); // [65,66,67,97,98,99]
-        System.out.println("heyBytes : " + heyBytes.toString());
+        System.out.println("heyBytes : " + Arrays.toString(heyBytes));
     }
 
 }
