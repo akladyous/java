@@ -1,6 +1,7 @@
 package com.practice.functional;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -12,9 +13,16 @@ public class ConsumerDemo {
     }
 
     public static void main(String[] args) {
-
         Consumer<String> printer = (string) -> System.out.println(string);
         printer.accept("hello");
+
+        forEach(Arrays.asList(1,2,3,4,5), (Integer n) -> {
+            if (n % 2 == 0) {
+                System.out.println(n + " Even Number");
+            } else {
+                System.out.println(n + " Odd Number");
+            }
+        });
     }
 
     public static <T> void forEach(List<T> list,  Consumer<T> consumer) {
