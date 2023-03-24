@@ -11,10 +11,10 @@ public class ClassDemo {
         System.out.println(trappola);
         Animal.staticMethod();
 
-//        List<Field>  fields = Arrays.asList(User.class.getDeclaredFields());
-//        for (Field f: fields) {
-//            System.out.println(f.getName());
-//        }
+        List<Field>  fields = Arrays.asList(User.class.getDeclaredFields());
+        for (Field f: fields) {
+            System.out.println(f.getName());
+        }
     }
 
 }

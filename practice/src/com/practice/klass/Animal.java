@@ -19,12 +19,4 @@ public class Animal {
         ids ++;
     }
 
-    public void info(){
-        System.out.println("name : " + this.name + " age : " + this.age);
-    }
-    public static void staticMethod(){
-        System.out.println("Class Static method");
-    }
-
-
-}
+};
