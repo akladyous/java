@@ -6,6 +6,9 @@ public class ReflectionDemo {
 
 
     public static void main(String[] args) {
-        FieldsAttributes.getFieldsAttribute(Reflect.class);
-    }
-}
+        FieldsModifier.getFieldsModifier(TestClass.class);
+
+        MethodsModifier.getMethodsModifiers(TestClass.class);
+    };
+
+};

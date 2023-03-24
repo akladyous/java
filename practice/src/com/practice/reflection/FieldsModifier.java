@@ -3,9 +3,9 @@ package com.practice.reflection;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-public class FieldsAttributes {
+public class FieldsModifier {
 
-    public static void getFieldsAttribute(Class c) {
+    public static void getFieldsModifier(Class c) {
 
         System.out.println("-".repeat(80));
         System.out.printf("%-25s%-10s%-25s%n", "method", "type","modifier");
