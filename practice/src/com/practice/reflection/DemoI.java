@@ -33,16 +33,18 @@ public class DemoI {
                     "Field: %-20s type: %-6s modifier: %-3s%n", fieldName, fieldType, modifierName
             );
         }
-//        Method[] methods = FunctionDemo.class.getMethods();
-//        for (Method method : methods) {
-//            method.getModifiers();
-//            Modifier.classModifiers();
-//            System.out.println(
-//                    "Method ( " +
-//                            method.getName() +
-//                            " ) Modifier: " +
-//                            Modifier.toString(method.getModifiers())
-//            );
-//        }
+        System.out.println("-".repeat(50));
+
+        Method[] methods = FunctionDemo.class.getMethods();
+        for (Method method : methods) {
+            method.getModifiers();
+            Modifier.classModifiers();
+            System.out.println(
+                    "Method ( " +
+                            method.getName() +
+                            " ) Modifier: " +
+                            Modifier.toString(method.getModifiers())
+            );
+        }
     }
 }
