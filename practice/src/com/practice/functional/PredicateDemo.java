@@ -23,7 +23,6 @@ public class PredicateDemo {
         Integer[] array = IntStream.rangeClosed(-10, 10).boxed().toArray(Integer[]::new);
         System.out.println(filter(array, oddNums).toString());
         System.out.println(filter(array, positiveNums).toString());
-
     }
 
     public static <T> List<T> filter(T[] array, Predicate<T> predicate) {
