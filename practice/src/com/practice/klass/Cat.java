@@ -8,6 +8,13 @@ public class Cat extends Animal {
         this.food = food;
     }
 
+    public static void main(String[] args) {
+        Cat trappola = new Cat("trappola", 4, "secco");
+        System.out.println(trappola);
+    };
+
+
+
     @Override
     public String toString() {
         return "Cat{" +
