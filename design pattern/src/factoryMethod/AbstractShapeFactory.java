@@ -6,3 +6,21 @@ public abstract class AbstractShapeFactory {
         return factoryMethod();
     }
 };
+class RectangleFactory extends AbstractShapeFactory {
+    @Override
+    protected Shape factoryMethod() {
+        return new Rectangle();
+    }
+}
+class SquareFactory extends AbstractShapeFactory {
+    @Override
+    protected Shape factoryMethod() {
+        return new Square();
+    }
+}
+class CircleFactory extends AbstractShapeFactory {
+    @Override
+    protected Shape factoryMethod() {
+        return new Circle();Z
+    }
+}
