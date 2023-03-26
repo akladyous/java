@@ -8,6 +8,7 @@ public class StringDemo {
 
   String newLine = System.getProperty("line.separator");
   String prova = new String("ciao");
+
   static int valueX;
 
   static { System.out.println("static block, get called once, when the class itself is initialized");     }

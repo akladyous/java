@@ -26,7 +26,6 @@ class SquareFactory extends AbstractShapeFactory {
 class CircleFactory extends AbstractShapeFactory {
     @Override
     protected Shape factoryMethod() {
-        System.out.println("factory method");
         return new Circle();
     }
 }
