@@ -1,4 +1,5 @@
-package singleton.lazy_implementation;
+package singleton.synchronized_implementation;
+
 
 public class TestSingleton {
 
