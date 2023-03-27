@@ -5,9 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WithArray {
+
   public static void main(String[] args) {
+
     int[] arrInt1;
     arrInt1 = new int[5];
+
     int[] arrInt2 = new int[10];
     for (int i = 0; i < arrInt2.length; i++)
       arrInt2[i] = i + 11;
