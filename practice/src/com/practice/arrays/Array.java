@@ -33,10 +33,6 @@ public class Array {
         Integer[] i4 = l2.toArray(new Integer[l2.size()]);
         System.out.println(Arrays.toString(i4));
 
-        List<String> ls1 = new ArrayList<>(List.of("a", "b"));
-
-
-
 
     }
 }
