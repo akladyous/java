@@ -1,4 +1,4 @@
-package com.practice.primitive;
+package com.practice.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,8 +12,10 @@ public class WithArray {
     arrInt1 = new int[5];
 
     int[] arrInt2 = new int[10];
-    for (int i = 0; i < arrInt2.length; i++)
+    for (int i = 0; i < arrInt2.length; i++) {
       arrInt2[i] = i + 11;
+    }
+
     char[] arrChar1 = new char[5];
     for (int i = 0; i < arrChar1.length; i++)
       arrChar1[i] = (char) (96 + i + 1);
