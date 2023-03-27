@@ -2,6 +2,7 @@ package com.practice.primitive;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -12,6 +13,7 @@ public class CharSetDemo {
         System.out.println(Charset.availableCharsets());
         System.out.println(Charset.defaultCharset().displayName(Locale.US));
         byte[] encoded = Charset.defaultCharset().encode("ciao").array();
+        System.out.println("'ciao' encoded " + Arrays.toString(encoded));
         Charset.availableCharsets().values().contains("UTF-8");
 
         System.out.println("-".repeat(50));
