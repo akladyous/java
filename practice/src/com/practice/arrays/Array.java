@@ -10,6 +10,7 @@ public class Array {
         //define arrayList in different way
         String[] arrStr1 = {"a","b","c","d"};
         String arrStr2[] = {"e","f","g","h"};
+
         ArrayList<String> listStr1 = new ArrayList<>(Arrays.asList(arrStr1));
         ArrayList<String> listStr2 = new ArrayList<>(List.of(arrStr2));
 
@@ -21,6 +22,7 @@ public class Array {
 
         int[] i1 = {1,2,3};
         int[] i2 = Arrays.copyOf(i1, i1.length);
+
         System.arraycopy(i1,0, i2, 0, i1.length);
         System.out.println(Arrays.toString(i2));
 
@@ -33,7 +35,6 @@ public class Array {
 
         List<String> ls1 = new ArrayList<>(List.of("a", "b"));
 
-//        System.out.println(x.getClass().getSimpleName());
 
 
 
