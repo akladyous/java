@@ -20,11 +20,6 @@ public class Array {
             System.out.println(n);
         }
 
-        int[] i1 = {1,2,3};
-        int[] i2 = Arrays.copyOf(i1, i1.length);
-
-        System.arraycopy(i1,0, i2, 0, i1.length);
-        System.out.println(Arrays.toString(i2));
 
         ArrayList<Integer> l2 = new ArrayList<>(Arrays.asList(2,3,4,5));
 
