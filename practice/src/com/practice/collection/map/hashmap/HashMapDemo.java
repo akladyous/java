@@ -22,6 +22,20 @@ public class HashMapDemo {
         });
 
         map.merge("d", 4, Math::addExact);
+        map.computeIfAbsent("e", k-> map.size()+1);
+
+        map.containsKey("a");
+        map.containsValue(1);
+        int aValue = map.get("a");
+        map.putIfAbsent("f", 6);
+        map.getOrDefault("f", 6);
+        map.remove("a", 3);
+        map.keySet().forEach(key -> {
+            map.compute(key, (k, v) -> {
+               return v %2 == 0 ? v : v * 3;
+            });
+        });
+
         System.out.println(map);
 //        demo1();
     }
