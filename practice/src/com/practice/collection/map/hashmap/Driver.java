@@ -9,8 +9,7 @@ public class Driver {
     public static void main(String args[])
     {
         // Creating an empty HashMap
-        Map<String, Integer> hm
-                = new HashMap<String, Integer>();
+        Map<String, Integer> hm = new HashMap<String, Integer>();
 
         // Inserting pairs in above Map
         // using put() method
