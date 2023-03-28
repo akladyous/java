@@ -20,9 +20,10 @@ public class HashMapDemo {
         map.compute("a",(k,v) -> {
             return v*10;
         });
+        map.computeIfPresent("a", (k,v) -> v*v);
+        map.computeIfAbsent("e", k-> map.size()+1);
 
         map.merge("d", 4, Math::addExact);
-        map.computeIfAbsent("e", k-> map.size()+1);
 
         map.containsKey("a");
         map.containsValue(1);
