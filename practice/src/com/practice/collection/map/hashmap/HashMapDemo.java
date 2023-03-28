@@ -1,12 +1,28 @@
 package com.practice.collection.map.hashmap;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import javax.xml.namespace.QName;
+import java.util.*;
 
 public class HashMapDemo {
     public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 1);
+        map.put("c", 1);
+        map.forEach((key, value) -> {
+            System.out.printf("key : %-10s value %-10d%n", key, value);
+        });
+        map.entrySet().forEach(pair -> {
+            System.out.println(pair.getKey() + pair.getValue());
+        });
+        Set<Map.Entry<String, Integer>> pairs = map.entrySet();
+
+
+//        demo1();
+    }
+
+
+    public static void demo1() {
         Map<String, String> users = new HashMap<>();
         users.put("name", "paolo");
         // hashMap with multiple Values data types
@@ -31,8 +47,8 @@ public class HashMapDemo {
             System.out.println(pair.getKey() + " " + pair.getValue());
         }
 //        mapObj.entrySet().stream();
-    }
 
+    }
 }
 
 
