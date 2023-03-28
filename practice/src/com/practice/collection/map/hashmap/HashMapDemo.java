@@ -7,8 +7,8 @@ public class HashMapDemo {
     public static void main(String[] args) {
         HashMap<String, Integer> map = new HashMap<>();
         map.put("a", 1);
-        map.put("b", 1);
-        map.put("c", 1);
+        map.put("b", 2);
+        map.put("c", 3);
         map.forEach((key, value) -> {
             System.out.printf("key : %-10s value %-10d%n", key, value);
         });
@@ -17,7 +17,12 @@ public class HashMapDemo {
         });
         Set<Map.Entry<String, Integer>> pairs = map.entrySet();
 
+        map.compute("a",(k,v) -> {
+            return v*10;
+        });
 
+        map.merge("d", 4, Math::addExact);
+        System.out.println(map);
 //        demo1();
     }
 
