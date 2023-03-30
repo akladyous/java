@@ -1,5 +1,7 @@
 package com.practice.generics.generic_methods;
 
+import java.util.List;
+
 public class GenericMethods {
 
     public static <T> void printArray(T[] array) {

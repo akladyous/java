@@ -1,4 +1,4 @@
-package com.practice.generics.upper_bound;
+package com.practice.generics.boundedTypeParameters;
 
 public class Box <T extends Comparable<T>>  {
     private T t;
@@ -17,7 +17,7 @@ public class Box <T extends Comparable<T>>  {
 
     public static void main(String[] args) {
         Box<Integer> integerBox = new Box<>();
-        integerBox.setT(Integer.valueOf(10));
+        integerBox.setT(10);
         integerBox.inspect(3);
     }
 }

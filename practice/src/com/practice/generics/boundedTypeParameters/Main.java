@@ -1,7 +1,7 @@
 package com.practice.generics.boundedTypeParameters;
 
 
-import com.practice.generics.upper_bound.Box;
+
 
 // https://docs.oracle.com/javase/tutorial/java/generics/bounded.html
 public class Main {
@@ -17,4 +17,6 @@ public class Main {
         box.inspect(2);
 
     }
+
+
 }
