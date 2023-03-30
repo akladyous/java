@@ -12,19 +12,7 @@ public class MainGenerics {
 		AddTwoNums<Double> numsDouble = new AddTwoNums<>(1.11, 2.22);
 
 
-		List rawList = new ArrayList();
-		rawList.add("-");
-		rawList.add("is");
-		rawList.add("a");
-		rawList.add("raw");
-		rawList.add("list");
-		rawList.add("of");
-		rawList.add("strings");
-		rawList.set(0,"this");
-		for (Object obj: rawList) {
-			String strObj = (String) obj;
-			System.out.printf("%-7s has %d characters%n", strObj, strObj.length());
-		}
+
 
 
 	}
