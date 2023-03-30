@@ -46,6 +46,7 @@ public class HashMapDemo {
         Map<String, String> users = new HashMap<>();
         users.put("name", "paolo");
         // hashMap with multiple Values data types
+
         Map<String, Object> mapObj = new HashMap<>();
         mapObj.put("age", 20);
         mapObj.put("name", "john");
