@@ -1,4 +1,4 @@
-package com.practice.generics.upper_bound;
+package com.practice.generics.buonded.upper_bound;
 
 import java.util.ArrayList;
 import java.util.Arrays;
