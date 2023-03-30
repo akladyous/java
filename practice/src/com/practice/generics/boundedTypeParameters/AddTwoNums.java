@@ -1,4 +1,4 @@
-package com.practice.generics.upper_bound;
+package com.practice.generics.boundedTypeParameters;
 
 public class AddTwoNums <T extends Number> {
     public T valueA;
@@ -9,12 +9,8 @@ public class AddTwoNums <T extends Number> {
         this.valueB = valueB;
     }
 
-    public Number result(){
+    public Number sum(){
         return valueA.intValue() + valueB.intValue();
     };
 
-    public static void main(String[] args) {
-//        AddTwoNums<Integer> addTwoNums = new AddTwoNums<>(1,1);
-
-    }
 }
