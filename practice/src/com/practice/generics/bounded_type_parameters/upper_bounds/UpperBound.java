@@ -1,9 +1,14 @@
 package com.practice.generics.bounded_type_parameters.upper_bounds;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class SumList {
+public class UpperBound {
     public static void main(String[] args) {
+        List<Integer> intNums = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        double sumOfIntegers = sumList(intNums);
+        System.out.println(sumOfIntegers);
 
 
     }
