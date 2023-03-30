@@ -1,9 +1,6 @@
 package com.practice.generics;
 
-import com.practice.generics.bounded_type_parameters.AddTwoNums;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.practice.generics.bounded_type_parameters.upper_bounds.AddTwoNums;
 
 public class MainGenerics {
 

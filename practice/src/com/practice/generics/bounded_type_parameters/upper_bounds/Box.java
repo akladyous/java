@@ -1,4 +1,4 @@
-package com.practice.generics.bounded_type_parameters;
+package com.practice.generics.bounded_type_parameters.upper_bounds;
 
 public class Box <T extends Comparable<T>>  {
     private T t;
