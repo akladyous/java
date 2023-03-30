@@ -1,10 +1,12 @@
-package com.practice.generics;
+package com.practice.generics.boundedTypeParameters;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericList {
 
+
+// https://docs.oracle.com/javase/tutorial/java/generics/bounded.html
+public class GenericList {
     public static <T> List<T> arrayToList(T[] arr) {
         List<T> list = new ArrayList<>();
 

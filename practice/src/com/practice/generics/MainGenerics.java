@@ -1,6 +1,6 @@
 package com.practice.generics;
 
-import com.practice.generics.bounded_type_parameters.upper_bounds.AddTwoNums;
+import com.practice.generics.upper_bound.AddTwoNums;
 
 public class MainGenerics {
 

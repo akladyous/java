@@ -1,4 +1,4 @@
-package com.practice.generics.bounded_type_parameters.upper_bounds;
+package com.practice.generics.upper_bound;
 
 import java.util.List;
 

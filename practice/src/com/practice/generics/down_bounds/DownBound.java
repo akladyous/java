@@ -1,4 +1,4 @@
-package com.practice.generics.bounded_type_parameters.down_bounds;
+package com.practice.generics.down_bounds;
 
 import java.util.ArrayList;
 import java.util.Arrays;
