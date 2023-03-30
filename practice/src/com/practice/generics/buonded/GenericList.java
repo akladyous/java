@@ -1,4 +1,4 @@
-package com.practice.generics.boundedTypeParameters;
+package com.practice.generics.buonded;
 
 import java.util.ArrayList;
 import java.util.List;
