@@ -17,7 +17,7 @@ public class EqualsImplementation {
         EqualsImplementation obj1 = new EqualsImplementation(1, "a", new int[]{1,2,3});
         EqualsImplementation obj2 = new EqualsImplementation(1, "a", new int[]{1,2,3});
 
-        obj1.equals(obj2);
+        System.out.println(obj1.equals(obj2));
 
     }
 
@@ -34,6 +34,6 @@ public class EqualsImplementation {
 
         if (!Objects.equals(this.id, that.id)) return false;
         if (! Objects.deepEquals(this.nums, that.nums)) return false;
-        return (! Objects.equals(this.str, that.str));
+        return ( Objects.equals(this.str, that.str));
     }
 }

@@ -2,6 +2,7 @@ package com.practice.object_class;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Person {
     public String name;
@@ -21,7 +22,24 @@ public class Person {
         sara.equals(john);
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if ( this == null || obj == null) return false;
+        if ( this == obj ) return true;
+        if ( this.getClass() != obj.getClass() ) return false;
 
+        // option 1
+        if (! Objects.equals(this.name, obj.name)) return false;
+        if (! Objects.equals(this.age, ((Person) obj).age)) return false;
+        return Objects.deepEquals(this.favoriteNumbers, ((Person) obj).favoriteNumbers);
+
+        // option 2
+        boolean[] equiality = new boolean[this.getClass().getDeclaredFields().length];
+
+
+
+        return super.equals(obj);
+    }
 }
 /*
 The equals method implements an equivalence relation on non-null object references:
