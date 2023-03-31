@@ -33,10 +33,7 @@ public class EqualsImplementation {
             //
         }
 
-        Field[][] fields = {
-                obj1.getClass().getDeclaredFields(),
-                obj2.getClass().getDeclaredFields()
-        };
+
         boolean[] equality = new boolean[obj1.getClass().getDeclaredFields().length];
         try {
             for ( int i = 0; i < fields[0].length; i++ ) {

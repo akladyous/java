@@ -39,6 +39,10 @@ public class Person {
 
         // option 2
         List<Boolean> equiality = new ArrayList<>();
+        Field[][] fields = {
+                obj1.getClass().getDeclaredFields(),
+                obj2.getClass().getDeclaredFields()
+        };
         Field[] fields1 = this.getClass().getDeclaredFields();
         Field[] fields2 = that.getClass().getDeclaredFields();
         if (fields1.length != fields2.length) return false;
@@ -48,7 +52,10 @@ public class Person {
                  Field field2 = that.getClass().getDeclaredField(field1.getName());
                 field1.setAccessible(true);
                 field2.setAccessible(true);
-                if ( field1.getName() != field2.getName() || !Objects.equals(field1.get(this),field2.get(that)) ) {
+                if (
+                        field1.getName() != field2.getName() ||
+                        !Objects.equals(field1.get(this),field2.get(that))
+                ) {
                     return false;
                 }
             }
