@@ -21,15 +21,7 @@ public class Person {
         sara.equals(john);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (obj.equals(obj)) return true;
 
-
-
-        return super.equals(obj);
-    }
 }
 /*
 The equals method implements an equivalence relation on non-null object references:
