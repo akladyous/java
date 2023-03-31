@@ -9,6 +9,7 @@ public class Person {
     public String name;
     public int age;
     public int[] favoriteNumbers;
+    public List<Integer> ids = new ArrayList<>();
 
     public Person(String name, int age, int[] favoriteNumbers) {
         this.name = name;
@@ -18,10 +19,44 @@ public class Person {
 
     public static void main(String[] args) {
         Person john = new Person("john", 20, new int[]{1,2,3});
-        Person sara = new Person("sara", 22, new int[]{1,2,3});
+        Person sara = new Person("john", 20, new int[]{1,2,3});
 
         sara.equals(john);
     }
+
+    private static boolean compareFields(Object obj1, Object obj2) {
+        Field[] fields1 = obj1.getClass().getDeclaredFields();
+        Field[] fields2 = obj2.getClass().getDeclaredFields();
+
+        Field[][] fields = {
+                obj1.getClass().getDeclaredFields(),
+                obj2.getClass().getDeclaredFields()
+        };
+
+        if (fields1.length != fields2.length) {
+            return false;
+        };
+        try {
+            for ( int i = 0; i < fields1.length; i++ ) {
+                fields1[i].setAccessible(true);
+                fields2[i].setAccessible(true);
+
+                if (fields1[i].getName() != fields2[i].getName()) {
+                    return false;
+                }
+
+                Object value1 = fields1[i].get(obj1);
+                Object value2 = fields2[i].get(obj2);
+
+                if ( !value1.equals(value2) ) {
+                    return false;
+                }
+            }
+        } catch(IllegalAccessException e) {
+            return false;
+        }
+        return true;
+    };
 
     @Override
     public boolean equals(Object obj) {
@@ -30,41 +65,10 @@ public class Person {
         if ( this.getClass() != obj.getClass() ) return false;
 
         Person that = (Person) obj;
-        /*
         // option 1
         if (! Objects.equals(this.name, that.name)) return false;
         if (! Objects.equals(this.age, ((Person) that).age)) return false;
         return Objects.deepEquals(this.favoriteNumbers, ((Person) that).favoriteNumbers);
-         */
-
-        // option 2
-        List<Boolean> equiality = new ArrayList<>();
-        Field[][] fields = {
-                obj1.getClass().getDeclaredFields(),
-                obj2.getClass().getDeclaredFields()
-        };
-        Field[] fields1 = this.getClass().getDeclaredFields();
-        Field[] fields2 = that.getClass().getDeclaredFields();
-        if (fields1.length != fields2.length) return false;
-
-        try {
-            for (Field field1 : this.getClass().getDeclaredFields()) {
-                 Field field2 = that.getClass().getDeclaredField(field1.getName());
-                field1.setAccessible(true);
-                field2.setAccessible(true);
-                if (
-                        field1.getName() != field2.getName() ||
-                        !Objects.equals(field1.get(this),field2.get(that))
-                ) {
-                    return false;
-                }
-            }
-        } catch (IllegalAccessException e) {
-            return false;
-        } catch (NoSuchFieldException e) {
-            return false;
-        }
-        return true;
     }
 }
 /*
