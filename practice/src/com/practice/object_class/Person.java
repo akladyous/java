@@ -29,16 +29,15 @@ public class Person {
         if ( this.getClass() != obj.getClass() ) return false;
 
         // option 1
-        if (! Objects.equals(this.name, obj.name)) return false;
-        if (! Objects.equals(this.age, ((Person) obj).age)) return false;
-        return Objects.deepEquals(this.favoriteNumbers, ((Person) obj).favoriteNumbers);
+        Person that = (Person) obj;
+        if (! Objects.equals(this.name, that.name)) return false;
+        if (! Objects.equals(this.age, ((Person) that).age)) return false;
+        return Objects.deepEquals(this.favoriteNumbers, ((Person) that).favoriteNumbers);
 
         // option 2
-        boolean[] equiality = new boolean[this.getClass().getDeclaredFields().length];
 
 
 
-        return super.equals(obj);
     }
 }
 /*
