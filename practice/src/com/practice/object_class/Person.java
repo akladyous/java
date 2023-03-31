@@ -1,5 +1,6 @@
 package com.practice.object_class;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -28,16 +29,35 @@ public class Person {
         if ( this == obj ) return true;
         if ( this.getClass() != obj.getClass() ) return false;
 
-        // option 1
         Person that = (Person) obj;
+        /*
+        // option 1
         if (! Objects.equals(this.name, that.name)) return false;
         if (! Objects.equals(this.age, ((Person) that).age)) return false;
         return Objects.deepEquals(this.favoriteNumbers, ((Person) that).favoriteNumbers);
+         */
 
         // option 2
+        List<Boolean> equiality = new ArrayList<>();
+        Field[] fields1 = this.getClass().getDeclaredFields();
+        Field[] fields2 = that.getClass().getDeclaredFields();
+        if (fields1.length != fields2.length) return false;
 
-
-
+        try {
+            for (Field field1 : this.getClass().getDeclaredFields()) {
+                 Field field2 = that.getClass().getDeclaredField(field1.getName());
+                field1.setAccessible(true);
+                field2.setAccessible(true);
+                if ( field1.getName() != field2.getName() || !Objects.equals(field1.get(this),field2.get(that)) ) {
+                    return false;
+                }
+            }
+        } catch (IllegalAccessException e) {
+            return false;
+        } catch (NoSuchFieldException e) {
+            return false;
+        }
+        return true;
     }
 }
 /*
