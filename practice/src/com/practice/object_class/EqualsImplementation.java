@@ -34,6 +34,6 @@ public class EqualsImplementation {
 
         if (!Objects.equals(this.id, that.id)) return false;
         if (! Objects.deepEquals(this.nums, that.nums)) return false;
-        return ( Objects.equals(this.str, that.str));
+        return ( Objects.equals(this.str, that.str) );
     }
 }
