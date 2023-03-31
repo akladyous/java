@@ -59,6 +59,17 @@ public class Person {
         return true;
     };
 
+    /**
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ( name == null ? 0 : name.hashCode());
+        return result;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if ( this == null || obj == null) return false;
@@ -69,16 +80,16 @@ public class Person {
         // option 1
         if (! Objects.equals(this.name, that.name)) return false;
         if (! Objects.equals(this.age, ((Person) that).age)) return false;
-        return Objects.deepEquals(this.favoriteNumbers, ((Person) that).favoriteNumbers);
+        return Objects.equals(this.favoriteNumbers, ((Person) that).favoriteNumbers);
     }
 }
 /*
 The equals method implements an equivalence relation on non-null object references:
 
--It is reflexive: for any non-null reference value x, x.equals(x) should return true.
--It is symmetric: for any non-null reference values x and y, x.equals(y) should return true if and only if y.equals(x) returns true.
--It is transitive: for any non-null reference values x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then x.equals(z) should return true.
--It is consistent: for any non-null reference values x and y, multiple invocations of x.equals(y) consistently return true or consistently return false,
- provided no information used in equals comparisons on the objects is modified.
--For any non-null reference value x, x.equals(null) should return false.
+It is reflexive: for any non-null reference value x, x.equals(x) should return true.
+It is symmetric: for any non-null reference values x and y, x.equals(y) should return true if and only if y.equals(x) returns true.
+It is transitive: for any non-null reference values x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then x.equals(z) should return true.
+It is consistent: for any non-null reference values x and y, multiple invocations of x.equals(y) consistently return true or consistently return false, provided no information used in equals comparisons on the objects is modified.
+For any non-null reference value x, x.equals(null) should return false.
+An equivalence relation partitions the elements it operates on into equivalence classes; all the members of an equivalence class are equal to each other. Members of an equivalence class are substitutable for each other, at least for some purposes.
 */
