@@ -1,6 +1,5 @@
 package com.practice.arrays;
 
-import com.practice.arrays.Animal;
 
 import java.util.*;
 
@@ -106,10 +105,6 @@ public class ArraysClass {
     }
 
     private static void provaOne(){
-        Animal[] animal = new Animal[5];
-        animal[0] = new Animal("one", 3);
-        Animal a1 = new Animal("one", 3);
-        animal[1] = a1;
 
         ArrayList<Integer> arrInt = new ArrayList<>(Arrays.asList(8,1,9,5,3,4,2,1,6));
         arrInt.add(5);
