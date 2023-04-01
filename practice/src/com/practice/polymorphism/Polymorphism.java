@@ -37,3 +37,6 @@ class Retile extends Animal {
 class Dreagon extends Retile {
     void breathFire(){};
 }
+class Aligator extends Retile {
+    void snapJaws(){};
+}
