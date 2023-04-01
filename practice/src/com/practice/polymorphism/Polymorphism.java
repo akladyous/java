@@ -18,7 +18,6 @@ class Animal{
     void sleep(){};
 }
 class Mammal extends Animal{
-    public int id = 0;
     public void controlTemp(){};
 }
 class Lion extends Mammal{
