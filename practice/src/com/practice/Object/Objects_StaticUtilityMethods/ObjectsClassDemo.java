@@ -1,6 +1,4 @@
-package com.practice.objects_class;
-
-import java.util.Objects;
+package com.practice.Object.Objects_StaticUtilityMethods;
 
 public class ObjectsClassDemo {
     private int id;

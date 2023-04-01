@@ -1,8 +1,7 @@
-package com.practice.object_class;
+package com.practice.Object.object_class;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
