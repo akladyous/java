@@ -1,4 +1,4 @@
-package com.practice.polymorphism;
+package com.practice.inheritance;
 
 public class Polymorphism {
     public static void main(String[] args) {
@@ -6,10 +6,21 @@ public class Polymorphism {
         alex.eat();
         alex.sleep();
 
-        Mammal m1 = new Lion();
-        m1.controlTemp();
-        m1.eat();
-        m1.sleep();
+        Mammal mammal = new Lion();
+        mammal.controlTemp();
+        mammal.eat();
+        mammal.sleep();
+
+        Lion lion = new Lion();
+        lion.sleep();
+        lion.roar();
+
+        // casting
+        ( (Lion) alex ).roar();
+        Lion suzie = (Lion) alex;
+        suzie.roar();
+
+
     }
 }
 
