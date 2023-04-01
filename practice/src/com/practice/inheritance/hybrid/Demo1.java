@@ -1,6 +1,6 @@
 package com.practice.inheritance.hybrid;
 
-public abstract class Animal {
+abstract class Animal {
     String name;
     int age;
 
@@ -51,3 +51,11 @@ class Penguin extends Bird {
     }
 }
 
+class HybridInheritanceExample {
+    public static void main(String[] args) {
+        Penguin penguin = new Penguin("Happy Feet", 5);
+        penguin.eat(); // calls the eat() method from Animal class
+        penguin.flyUp(); // calls the overridden flyUp() method from Penguin class
+        penguin.flyDown(); // calls the overridden flyDown() method from Penguin class
+    }
+}
