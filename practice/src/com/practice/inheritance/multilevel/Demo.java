@@ -1,6 +1,6 @@
-package com.practice.inheritance;
+package com.practice.inheritance.multilevel;
 
-public class Polymorphism {
+public class Demo {
     public static void main(String[] args) {
         Animal alex = new Lion();
         alex.eat();
