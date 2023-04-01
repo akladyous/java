@@ -22,12 +22,12 @@ class Mammal extends Animal{
 }
 class Lion extends Mammal{
     @Override
-    void sleep(){};
+    void sleep(){System.out.println("Lion class");};
     void roar(){};
 }
 class Bat extends Mammal {
     @Override
-    void sleep(){};
+    void sleep(){System.out.println("Bat class");};
     void fly(){};
 }
 class Retile extends Animal {
