@@ -2,7 +2,7 @@ package com.practice.inheritance.multilevel;
 
 public class Demo {
     public static void main(String[] args) {
-        Animal alex = new Lion();
+        com.practice.inheritance.hybrid.Animal alex = new Lion();
         alex.eat();
         alex.sleep();
 
@@ -28,7 +28,7 @@ class Animal{
     void eat(){};
     void sleep(){};
 }
-class Mammal extends Animal{
+class Mammal extends com.practice.inheritance.hybrid.Animal {
     public void controlTemp(){};
 }
 class Lion extends Mammal{
@@ -41,7 +41,7 @@ class Bat extends Mammal {
     void sleep(){System.out.println("Bat class");};
     void fly(){};
 }
-class Retile extends Animal {
+class Retile extends com.practice.inheritance.hybrid.Animal {
     void layEggs(){};
 }
 class Dreagon extends Retile {
