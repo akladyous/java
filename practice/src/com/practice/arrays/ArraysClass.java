@@ -1,6 +1,6 @@
 package com.practice.arrays;
 
-import com.practice.klass.Animal;
+import com.practice.arrays.Animal;
 
 import java.util.*;
 
