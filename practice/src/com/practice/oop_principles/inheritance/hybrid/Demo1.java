@@ -1,4 +1,4 @@
-package com.practice.inheritance.hybrid;
+package com.practice.oop_principles.inheritance.hybrid;
 
 abstract class Animal {
     String name;

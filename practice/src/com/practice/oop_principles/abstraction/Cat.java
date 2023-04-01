@@ -1,4 +1,4 @@
-package com.practice.abstraction;
+package com.practice.oop_principles.abstraction;
 
 public class Cat extends Animal {
 

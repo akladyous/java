@@ -1,8 +1,8 @@
-package com.practice.inheritance.multilevel;
+package com.practice.oop_principles.inheritance.multilevel;
 
 public class Demo {
     public static void main(String[] args) {
-        com.practice.inheritance.hybrid.Animal alex = new Lion();
+        com.practice.oop_principles.inheritance.hybrid.Animal alex = new Lion();
         alex.eat();
         alex.sleep();
 
@@ -28,7 +28,7 @@ class Animal{
     void eat(){};
     void sleep(){};
 }
-class Mammal extends com.practice.inheritance.hybrid.Animal {
+class Mammal extends com.practice.oop_principles.inheritance.hybrid.Animal {
     public void controlTemp(){};
 }
 class Lion extends Mammal{
@@ -41,7 +41,7 @@ class Bat extends Mammal {
     void sleep(){System.out.println("Bat class");};
     void fly(){};
 }
-class Retile extends com.practice.inheritance.hybrid.Animal {
+class Retile extends com.practice.oop_principles.inheritance.hybrid.Animal {
     void layEggs(){};
 }
 class Dreagon extends Retile {

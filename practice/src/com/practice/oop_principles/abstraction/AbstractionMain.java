@@ -1,9 +1,6 @@
-package com.practice.abstraction;
+package com.practice.oop_principles.abstraction;
 
 import java.util.Arrays;
-import java.util.List;
-
-import com.practice.utilities.Helpers;
 
 public class AbstractionMain {
   public static void main(String[] args) {
