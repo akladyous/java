@@ -67,7 +67,6 @@ public class ArraysClass {
         System.out.println("with Type[] " + Arrays.toString(toArrayTest3));
         System.out.println("-".repeat(40));
 
-
 //        Integer arNums1Copy[] = new Integer[5];
 //        int result = Arrays.compare(arNums1.toArray(arNums1Copy), arNums2.toArray());
 //        List<Integer> nn = IntStream.range(1,10).boxed()

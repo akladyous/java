@@ -1,6 +1,7 @@
 package com.practice.collection.list.ArraList;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -21,9 +22,6 @@ public class Planets {
         lst.add("Pluto");
 
         Predicate<Integer> isValid = phone -> { return phone == 1; };
-
-        String s1 = "aaa";
-
 
     }
 }
