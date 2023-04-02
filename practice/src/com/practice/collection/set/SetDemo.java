@@ -18,6 +18,10 @@ public class SetDemo {
         set.remove(5);
         System.out.println(set);
 
+        Set<Integer> setII = new HashSet<>(List.of(6,7,8,9,10));
+        setII.add(null);
+        System.out.println(set.equals(setII));
+
     }
 
 }
