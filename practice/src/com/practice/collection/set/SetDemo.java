@@ -17,6 +17,7 @@ public class SetDemo {
         System.out.println("contains method : " + set.contains(5));;
         set.remove(5);
         System.out.println(set);
+
     }
 
 }
