@@ -1,5 +1,6 @@
 package com.practice.collection.list.ArraList;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,6 +26,11 @@ public class ArrayListDemo {
         System.out.println(nums);
         nums.set(1, 2);
         System.out.println(nums);
+
+        Iterator<Integer> numsIterator = nums.iterator();
+        while(numsIterator.hasNext()) {
+            System.out.println(numsIterator.next());
+        }
 
     }
 
