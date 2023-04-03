@@ -6,6 +6,7 @@ import java.util.List;
 public class SeatListGenerator {
 
     public static void main(String[] args) {
+
         System.out.println(generateSeatList(10, 4, 'A'));;
     }
 

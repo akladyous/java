@@ -1,4 +1,4 @@
-package com.practice.strings;
+package com.practice.klass;
 
 // https://docs.oracle.com/javase/tutorial/i18n/text/locale.html
 
