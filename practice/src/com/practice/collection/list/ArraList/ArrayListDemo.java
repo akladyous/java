@@ -1,9 +1,6 @@
 package com.practice.collection.list.ArraList;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
 
 public class ArrayListDemo {
@@ -30,6 +27,10 @@ public class ArrayListDemo {
         Iterator<Integer> numsIterator = nums.iterator();
         while(numsIterator.hasNext()) {
             System.out.println(numsIterator.next());
+        }
+        ListIterator<Integer> iterator = nums.listIterator(1);
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
 
     }
