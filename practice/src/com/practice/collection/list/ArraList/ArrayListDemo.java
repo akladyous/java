@@ -19,11 +19,12 @@ public class ArrayListDemo {
         int indexOfFirstOccurrence = nums.indexOf(5);
         int lastIndexOf = nums.lastIndexOf(5);
         nums.addAll(List.of(5,6,6,7));
-        Integer numToRemove = 5;
-        nums.remove(numToRemove);
 
-
-
+        nums.remove(Integer.valueOf(5));
+        nums.replaceAll(num -> (int) Math.pow(num,2));
+        System.out.println(nums);
+        nums.set(1, 2);
+        System.out.println(nums);
 
     }
 
