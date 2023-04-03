@@ -9,19 +9,10 @@ public class Planets {
 
     public static void main(String[] args) {
 
-        List<String> lst = new ArrayList<>();
-        lst.add("Mercury");
-        lst.add("Venus");
-        lst.add("Earth");
-        lst.add("JavaSoft");
-        lst.add("Mars");
-        lst.add("Jupiter");
-        lst.add("Saturn");
-        lst.add("Uranus");
-        lst.add("Neptune");
-        lst.add("Pluto");
-
+        List<String> planets = new ArrayList<>();
+        planets.addAll(List.of("Mercury", "Venus", "Earth", "JavaSoft", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"));
+        System.out.println(planets);
         Predicate<Integer> isValid = phone -> { return phone == 1; };
 
     }
-}
+};
