@@ -23,7 +23,15 @@ public class StackDemo {
             stackOfRandomInts.push(n);
         }
         System.out.println(stackOfRandomInts.toString());
-
+        for (int i=0; i < stackOfRandomInts.size(); i ++) {
+            if (stackOfRandomInts.peek() % 2 == 0){
+                System.out.println("Even Number");
+            } else {
+                System.out.println("Odd Number");
+                stackOfRandomInts.pop();
+            }
+        }
+        System.out.println(stackOfRandomInts.toString());
     }
 
     public static int[] randomNumbers(int size) {
