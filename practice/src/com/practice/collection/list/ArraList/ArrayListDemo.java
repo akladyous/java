@@ -1,6 +1,8 @@
 package com.practice.collection.list.ArraList;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class ArrayListDemo {
@@ -33,6 +35,15 @@ public class ArrayListDemo {
             System.out.println(iterator.next());
         }
 
+        List<Integer> intStream = IntStream.range(1, 201).boxed().collect(Collectors.toList());
+        System.out.println(intStream);
+        int i = intStream.size() - 1;
+        while(i >= 5) {
+            intStream.remove(i);
+            i--;
+        }
+        System.out.println(intStream);
+        System.out.println(intStream.size());
 
     }
 
