@@ -33,6 +33,7 @@ public class ArrayListDemo {
             System.out.println(iterator.next());
         }
 
+
     }
 
     public static int randomNum(int maxNumber) {
