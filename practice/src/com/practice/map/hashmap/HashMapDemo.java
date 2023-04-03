@@ -1,6 +1,5 @@
-package com.practice.collection.map.hashmap;
+package com.practice.map.hashmap;
 
-import javax.xml.namespace.QName;
 import java.util.*;
 
 public class HashMapDemo {

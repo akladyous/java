@@ -1,4 +1,4 @@
-package com.practice.collection.map.set;
+package com.practice.collection.list.set;
 
 import java.util.Arrays;
 import java.util.HashSet;
