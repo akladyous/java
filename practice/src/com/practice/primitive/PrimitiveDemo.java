@@ -34,4 +34,4 @@ public class PrimitiveDemo {
   int getPrivateStatic(){
     return privateStaticVar;
   }
-}
+}  
