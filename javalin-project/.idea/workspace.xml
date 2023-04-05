@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Current File" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="246c4f7f-9bd0-4161-aec1-e9a817f133f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/DAOs/users/DAOsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/DAOs/users/UsersDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/controllers/UserCrud.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/controllers/UserEndPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/services/users/UserDAOImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/services/users/UserServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/services/users/UsersTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/utils/FileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/utils/InitializeDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/practice/utils/JDBCUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/.keep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/.keep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/create_database.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/create_tables.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/users/.keep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/users/create_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/users/delete_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/users/get_user_by_id.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/users/populate_user_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/script/sql/users/update_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/DAOs/users/DAOsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/DAOs/users/UsersDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/controllers/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/models/User$Attributes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/services/users/UserDAOImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/services/users/UserServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/services/users/UsersTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/utils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/utils/InitializeDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/practice/utils/JDBCUtils.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2M6gpggTQNoHSzoacWYgb6xD5Df" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/boula/Documents/development/java/javalin-project/src/main/script/sql&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37091607&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/script/sql" />
+      <recent name="$PROJECT_DIR$/src/main/script/sql/users" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.practice.utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="JDBCUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.practice.utils.JDBCUtils" />
+      <module name="javalin-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.practice.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.practice.Main" />
+      <module name="javalin-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.practice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.JDBCUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="246c4f7f-9bd0-4161-aec1-e9a817f133f2" name="Changes" comment="" />
+      <created>1677093631006</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677093631006</updated>
+    </task>
+    <servers />
+  </component>
+</project>
