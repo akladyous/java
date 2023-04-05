@@ -4,6 +4,48 @@ import java.util.*;
 
 public class HashMapDemo {
     public static void main(String[] args) {
+        mapIteratorDemo();
+    }
+
+    public static void mapIteratorDemo(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 2);
+        map.put("c", 3);
+        // iterate over key value pairs  -> ( 1 ) <-
+        Iterator<Map.Entry<String, Integer>> mapIterator = map.entrySet().iterator();
+        while (mapIterator.hasNext()) {
+            Map.Entry<String, Integer> pair = mapIterator.next();
+            int value = pair.getValue();
+            pair.setValue(value * 2);
+            System.out.println("key : " + pair.getKey() + " value : " + pair.getValue());
+        };
+        System.out.println("-".repeat(40));
+        // iterate over key value pairs  -> ( 2 ) <-
+        for (Map.Entry<String, Integer> pair : map.entrySet() ) {
+            int value = pair.getValue();
+            pair.setValue( value / 2);
+            System.out.println("key : " + pair.getKey() + " value : " + pair.getValue());
+        }
+        System.out.println("-".repeat(40));
+        // iterate over key value pairs  -> ( 3 ) <-
+        map.forEach((key, value) -> {
+            System.out.println("key : " + key + " value : " + value);
+        });
+        System.out.println("-".repeat(40));
+        // iterate over key value pairs  -> ( 3 ) <-
+        map.entrySet().forEach(pair -> {
+            int value = pair.getValue();
+            pair.setValue(value * 2);
+            System.out.println("key : " + pair.getKey() + " value : " + pair.getValue());
+        });
+
+        map.keySet().forEach(key -> System.out.println("key : " + key));
+        map.values().forEach(value -> System.out.println("value : " + value));
+
+    }
+
+    public static void demo1(){
         HashMap<String, Integer> map = new HashMap<>();
         map.put("a", 1);
         map.put("b", 2);
@@ -32,16 +74,14 @@ public class HashMapDemo {
         map.remove("a", 3);
         map.keySet().forEach(key -> {
             map.compute(key, (k, v) -> {
-               return v %2 == 0 ? v : v * 3;
+                return v %2 == 0 ? v : v * 3;
             });
         });
 
         System.out.println(map);
-//        demo1();
     }
 
-
-    public static void demo1() {
+    public static void demo2() {
         Map<String, String> users = new HashMap<>();
         users.put("name", "paolo");
         // hashMap with multiple Values data types
