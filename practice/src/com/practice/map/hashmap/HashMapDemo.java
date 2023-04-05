@@ -44,7 +44,7 @@ public class HashMapDemo {
         map.values().forEach(value -> System.out.println("value : " + value));
         // ""
         // ""
-        //
+        // ""
     }
 
     public static void demo1(){
