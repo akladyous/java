@@ -5,6 +5,7 @@ public class Demo {
         Runtime rt = Runtime.getRuntime();
         long usedKB = ( rt.totalMemory() - rt.freeMemory() ) / 1024;
         System.out.format("Process ID  %-10d%n", ProcessHandle.current().pid());
+        System.out.format("Thread Count  %-10d%n ", Thread.activeCount());
 
     }
 }
