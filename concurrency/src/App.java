@@ -14,19 +14,24 @@ public class App {
         Thread thread1 = new Thread(runner1);
         Thread thread2 = new Thread(()->{
             for ( int i = 0; i < 5; i++ ) {
-                System.out.println("Runnable Two : " + i);
+                try {
+                    Thread.sleep(i*100);
+                    System.out.println("Runnable Two : " + i);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         Thread thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
                 for ( int i = 0; i < 5; i++ ) {
-                    System.out.println("Runnable Three : " + i);
+                    try {
+                        Thread.sleep(i*250);
+                        System.out.printf("%-10s iteration: %d%n",Thread.currentThread().getName(),i );
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
