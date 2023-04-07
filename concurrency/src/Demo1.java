@@ -8,15 +8,16 @@ class Runner1 implements Runnable {
     }
 }
 
-public class App {
+public class Demo1 {
     public static void main(String[] args) {
+
         Runner1 runner1 = new Runner1();
         Thread thread1 = new Thread(runner1);
         Thread thread2 = new Thread(()->{
             for ( int i = 0; i < 5; i++ ) {
                 try {
                     Thread.sleep(i*100);
-                    System.out.printf("%-10s iteration: %d%n",Thread.currentThread().getName(),i );
+                    System.out.printf("%-10s Priority %-10s iteration: %d%n",Thread.currentThread().getName(), Thread.currentThread().getPriority() ,i );
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -28,18 +29,20 @@ public class App {
                 for ( int i = 0; i < 5; i++ ) {
                     try {
                         Thread.sleep(i*250);
-                        System.out.printf("%-10s iteration: %d%n",Thread.currentThread().getName(),i );
+                        System.out.printf("%-10s Priority %-10s iteration: %d%n",Thread.currentThread().getName(), Thread.currentThread().getPriority() ,i );
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
             }
         });
-        thread1.setName("Thread one");
+        thread1.setName("Thread I");
         thread1.start();
-        thread2.setName("Thread one");
+        thread2.setName("Thread II");
         thread2.start();
-        thread3.setName("Thread one");
+
+        thread3.setName("Thread III");
+        thread3.setPriority(Thread.MAX_PRIORITY);
         thread3.start();
 
 
