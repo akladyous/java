@@ -2,7 +2,7 @@ class Runner1 implements Runnable {
     @Override
     public void run() {
         for ( int i = 0; i < 5; i++ ) {
-            System.out.println("Runnable One : " + i);
+            System.out.printf("%-10s iteration: %d%n",Thread.currentThread().getName(),i );
             for ( int j = 0; j < 1000000; j++ ) {double x=i*i+Math.pow(i, 200);}
         }
     }
@@ -16,7 +16,7 @@ public class App {
             for ( int i = 0; i < 5; i++ ) {
                 try {
                     Thread.sleep(i*100);
-                    System.out.println("Runnable Two : " + i);
+                    System.out.printf("%-10s iteration: %d%n",Thread.currentThread().getName(),i );
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
