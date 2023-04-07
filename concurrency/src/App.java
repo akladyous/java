@@ -3,7 +3,7 @@ class Runner1 implements Runnable {
     public void run() {
         for ( int i = 0; i < 5; i++ ) {
             System.out.println("Runnable One : " + i);
-            for ( int j = 0; j < 10000; j++ ) {double x=i*i+Math.pow(i, 200);}
+            for ( int j = 0; j < 1000000; j++ ) {double x=i*i+Math.pow(i, 200);}
         }
     }
 }
@@ -20,6 +20,11 @@ public class App {
         Thread thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 for ( int i = 0; i < 5; i++ ) {
                     System.out.println("Runnable Three : " + i);
                 }
