@@ -2,7 +2,7 @@ class Runner1 implements Runnable {
     @Override
     public void run() {
         for ( int i = 0; i < 5; i++ ) {
-            System.out.printf("%-10s iteration: %d%n",Thread.currentThread().getName(),i );
+            System.out.printf("%-10s Priority %-10s iteration: %d%n",Thread.currentThread().getName(), Thread.currentThread().getPriority() ,i );
             for ( int j = 0; j < 1000000; j++ ) {double x=i*i+Math.pow(i, 200);}
         }
     }
@@ -35,9 +35,11 @@ public class App {
                 }
             }
         });
-
+        thread1.setName("Thread one");
         thread1.start();
+        thread2.setName("Thread one");
         thread2.start();
+        thread3.setName("Thread one");
         thread3.start();
 
 
