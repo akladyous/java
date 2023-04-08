@@ -8,7 +8,7 @@ class Runner1 implements Runnable {
     }
 }
 
-public class Demo1 {
+class Demo1 {
     public static void main(String[] args) {
 
         Runner1 runner1 = new Runner1();
