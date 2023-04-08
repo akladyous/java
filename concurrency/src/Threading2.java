@@ -48,6 +48,5 @@ class Demo1 {
         thread3.setPriority(Thread.MAX_PRIORITY);
         thread3.start();
 
-
     }
 }
