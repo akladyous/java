@@ -13,6 +13,7 @@ class Demo1 {
 
         Runner1 runner1 = new Runner1();
         Thread thread1 = new Thread(runner1);
+
         Thread thread2 = new Thread(()->{
             for ( int i = 0; i < 5; i++ ) {
                 try {
@@ -23,6 +24,7 @@ class Demo1 {
                 }
             }
         });
+
         Thread thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -36,6 +38,7 @@ class Demo1 {
                 }
             }
         });
+
         thread1.setName("Thread I");
         thread1.start();
         thread2.setName("Thread II");
