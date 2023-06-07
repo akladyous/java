@@ -11,7 +11,7 @@ public class CharSetDemo {
     public static void main(String[] args) throws UnsupportedEncodingException {
         System.out.println(Charset.defaultCharset());
         System.out.println(Charset.availableCharsets());
-        System.out.println(Charset.defaultCharset().displayName(Locale.US));
+        System.out.println("charSet [local.us] " + Charset.defaultCharset().displayName(Locale.US));
         byte[] encoded = Charset.defaultCharset().encode("ciao").array();
         System.out.println("'ciao' encoded " + Arrays.toString(encoded));
         Charset.availableCharsets().values().contains("UTF-8");
