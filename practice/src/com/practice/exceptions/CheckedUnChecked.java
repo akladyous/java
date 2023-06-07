@@ -19,6 +19,7 @@ public class CheckedUnChecked {
         }
     }
 
+    // unchecked exception
     private static void printValueAtIndex(int[] numsArray, int index) {
         System.out.println(numsArray[index]);
     }
