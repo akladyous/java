@@ -101,6 +101,14 @@ public class ArraysClass {
         System.out.println("deepEquals : " + Boolean.toString(deepEquals1));
         System.out.println("deepEquals : " + deepEquals2.toString());
         System.out.println("-".repeat(40));
+
+        int[] n1 = new int[6];
+        Arrays.fill(n1, 1);
+        System.out.println(Arrays.toString(n1));
+
+        int[] n2 = new int[]{4,1,2,7,9,5};
+        Arrays.sort(n2);
+        System.out.println(Arrays.toString(n2));
     }
 
     private static void provaOne(){
