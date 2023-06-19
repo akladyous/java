@@ -20,7 +20,7 @@ public class CollectionDemo {
         System.out.println("list equals method nums1.equals(nums2) : " + nums.equals(nums2));
         List<String> languages = new ArrayList<>();
         languages.addAll(Arrays.asList("JavaScript", "Java", "C++", "Ruby", "Python", "Go", "Rust"));
-        languages.retainAll(Arrays.asList("Java"));
+        languages.retainAll(Arrays.asList("Java", "JavaScript"));
         System.out.println(languages);
 
     }

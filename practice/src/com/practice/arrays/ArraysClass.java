@@ -109,6 +109,7 @@ public class ArraysClass {
         int[] n2 = new int[]{4,1,2,7,9,5};
         Arrays.sort(n2);
         System.out.println(Arrays.toString(n2));
+
     }
 
     private static void provaOne(){
@@ -121,6 +122,7 @@ public class ArraysClass {
         ArrayList<Integer>  arrayListInt2 = new ArrayList<>();
         listInt1.sort(Comparator.naturalOrder());
         System.out.println(listInt1);
+
     }
     
     private static int[] generateRandomNumbers(Integer size) {

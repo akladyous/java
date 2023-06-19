@@ -8,6 +8,13 @@ import java.util.stream.IntStream;
 public class ArrayListDemo {
 
     public static void main(String[] args) {
+        List<Integer> n1 = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        List<Integer> n2 = new ArrayList<>(List.of(1,2,3));
+        n1.add(1);
+        n1.contains(1);
+        n1.indexOf(1);
+
+        List.of(1,2,3,4,5);
         List<Integer> nums = new ArrayList<>();
         nums.add(3);
         if (nums.contains(3)) {

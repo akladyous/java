@@ -18,5 +18,8 @@ public class Sort {
         integers[1] = 0;
         integers[4] = 4;
         System.out.println(Arrays.toString(integers));
+
+        Comparator.naturalOrder();
+        Comparator.reverseOrder();
     }
 }
